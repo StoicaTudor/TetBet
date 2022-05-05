@@ -1,6 +1,6 @@
 namespace TetBet.Core.Entities
 {
-    public abstract class User
+    public class User
     {
         public long Id { get; set; }
 
