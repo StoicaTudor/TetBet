@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Reference Include="TetBet.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\TetBet.Core\bin\Debug\net5.0\TetBet.Core.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
