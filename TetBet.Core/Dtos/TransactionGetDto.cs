@@ -1,6 +1,6 @@
 using System;
 
-namespace TetBet.Core.Dtos.User
+namespace TetBet.Core.Dtos
 {
     public class TransactionGetDto
     {

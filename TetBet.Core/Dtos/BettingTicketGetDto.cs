@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using TetBet.Core.Entities;
 
-namespace TetBet.Core.Dtos.User
+namespace TetBet.Core.Dtos
 {
     public class BettingTicketGetDto
     {
