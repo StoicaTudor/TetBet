@@ -5,13 +5,29 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="AutoMapper" Version="11.0.1" />
-      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
       <PackageReference Include="EntityFramework" Version="6.4.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.16">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.16" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.16">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+      <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.13" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\TetBet.Core\TetBet.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="TetBet.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\TetBet.Data\obj\Debug\net5.0\TetBet.Data.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

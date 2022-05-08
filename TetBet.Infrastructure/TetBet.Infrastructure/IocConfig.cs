@@ -10,7 +10,7 @@ namespace TetBet.Infrastructure
 
         public static void RegisterComponents()
         {
-            Container.RegisterType<IUserRepository, UserRepository>();
+            // Container.RegisterType<IUserRepository, UserRepository>();
         }
 
         public static IUnityContainer GetConfiguredContainer()
