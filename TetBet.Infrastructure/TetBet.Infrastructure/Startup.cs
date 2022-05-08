@@ -21,7 +21,7 @@ namespace TetBet.Infrastructure
             // configure DBContext with SQL DBs
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseMySQL(
-                    "server = localhost; port = 3306; user = Citadin2; password = Aaladin2000-; database = TET_BET"));
+                    "server = localhost; port = 3306; user = Citadin2; password = Aaladin2000-; database = TetBet"));
         }
     }
 }
