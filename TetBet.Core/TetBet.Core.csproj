@@ -4,4 +4,16 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+      <PackageReference Include="Unity.Container" Version="5.11.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="TetBet.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\TetBet.Data\obj\Debug\net5.0\TetBet.Data.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
