@@ -1,4 +1,4 @@
-using TetBet.Core.Services.Interfaces;
+using TetBet.Client.Application.Services.Interfaces;
 
 namespace TetBet.Core.Services.Implementations
 {

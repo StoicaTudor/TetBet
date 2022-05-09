@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TetBet.Data.Entities;
+using TetBet.Infrastructure.Entities;
 
 namespace TetBet.Core.Dtos.GetDtos
 {

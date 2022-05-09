@@ -1,6 +1,6 @@
 using Unity;
 
-namespace TetBet.Core.Services
+namespace TetBet.Client.Application.Services
 {
     public class IocConfig
     {

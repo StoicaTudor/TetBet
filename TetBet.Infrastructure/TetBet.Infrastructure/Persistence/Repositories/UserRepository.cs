@@ -1,4 +1,3 @@
-using TetBet.Data.Entities;
 using User = TetBet.Infrastructure.Entities.User;
 
 namespace TetBet.Infrastructure.Persistence.Repositories

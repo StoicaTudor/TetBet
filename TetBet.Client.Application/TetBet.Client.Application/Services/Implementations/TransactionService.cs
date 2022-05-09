@@ -1,10 +1,10 @@
 using AutoMapper;
+using TetBet.Client.Application.Services.Interfaces;
 using TetBet.Core.Dtos.CreationDtos;
 using TetBet.Core.Repositories;
-using TetBet.Core.Services.Interfaces;
-using TetBet.Data.Entities;
+using TetBet.Infrastructure.Entities;
 
-namespace TetBet.Core.Services.Implementations
+namespace TetBet.Client.Application.Services.Implementations
 {
     public class TransactionService : ITransactionService
     {

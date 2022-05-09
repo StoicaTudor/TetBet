@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TetBet.Data.Entities;
 
 namespace TetBet.Infrastructure.Entities
 {

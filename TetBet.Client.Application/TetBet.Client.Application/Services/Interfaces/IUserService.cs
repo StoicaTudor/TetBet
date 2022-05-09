@@ -1,7 +1,6 @@
-using TetBet.Core.Dtos;
 using TetBet.Core.Dtos.GetDtos;
 
-namespace TetBet.Core.Services.Interfaces
+namespace TetBet.Client.Application.Services.Interfaces
 {
     public interface IUserService
     {

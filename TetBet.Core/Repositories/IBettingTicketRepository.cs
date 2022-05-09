@@ -1,5 +1,5 @@
 
-using TetBet.Data.Entities;
+using TetBet.Infrastructure.Entities;
 
 namespace TetBet.Core.Repositories
 {

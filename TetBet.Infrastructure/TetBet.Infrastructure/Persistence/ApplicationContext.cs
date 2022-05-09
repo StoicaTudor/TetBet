@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using TetBet.Data.Entities;
 using AccountDetails = TetBet.Infrastructure.Entities.AccountDetails;
 using Bet = TetBet.Infrastructure.Entities.Bet;
 using BettingTicket = TetBet.Infrastructure.Entities.BettingTicket;

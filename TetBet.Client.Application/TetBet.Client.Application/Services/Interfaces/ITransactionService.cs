@@ -1,6 +1,6 @@
 using TetBet.Core.Dtos.CreationDtos;
 
-namespace TetBet.Core.Services.Interfaces
+namespace TetBet.Client.Application.Services.Interfaces
 {
     public interface ITransactionService
     {
