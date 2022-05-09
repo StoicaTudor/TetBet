@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using TetBet.Core.Repositories;
 using TetBet.Data.Entities;
+using EntityBase = TetBet.Infrastructure.Entities.EntityBase;
 
 namespace TetBet.Infrastructure.Persistence.Repositories
 {

@@ -1,5 +1,6 @@
 
 using TetBet.Data.Entities;
+using BettingTicket = TetBet.Infrastructure.Entities.BettingTicket;
 
 namespace TetBet.Infrastructure.Persistence.Repositories
 {

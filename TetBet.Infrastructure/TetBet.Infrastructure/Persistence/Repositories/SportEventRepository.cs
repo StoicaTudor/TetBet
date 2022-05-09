@@ -1,5 +1,6 @@
 
 using TetBet.Data.Entities;
+using SportEvent = TetBet.Infrastructure.Entities.SportEvent;
 
 namespace TetBet.Infrastructure.Persistence.Repositories
 {

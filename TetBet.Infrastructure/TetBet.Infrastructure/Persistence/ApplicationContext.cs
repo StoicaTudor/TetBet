@@ -1,5 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using TetBet.Data.Entities;
+using AccountDetails = TetBet.Infrastructure.Entities.AccountDetails;
+using Bet = TetBet.Infrastructure.Entities.Bet;
+using BettingTicket = TetBet.Infrastructure.Entities.BettingTicket;
+using Competition = TetBet.Infrastructure.Entities.Competition;
+using Country = TetBet.Infrastructure.Entities.Country;
+using GenericBet = TetBet.Infrastructure.Entities.GenericBet;
+using Sport = TetBet.Infrastructure.Entities.Sport;
+using SportEntity = TetBet.Infrastructure.Entities.SportEntity;
+using SportEvent = TetBet.Infrastructure.Entities.SportEvent;
+using SportEventBet = TetBet.Infrastructure.Entities.SportEventBet;
+using SportRelatedHuman = TetBet.Infrastructure.Entities.SportRelatedHuman;
+using Transaction = TetBet.Infrastructure.Entities.Transaction;
+using User = TetBet.Infrastructure.Entities.User;
+using UserBet = TetBet.Infrastructure.Entities.UserBet;
 
 namespace TetBet.Infrastructure.Persistence
 {
