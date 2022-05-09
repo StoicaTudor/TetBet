@@ -1,7 +1,7 @@
-
+using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
 using SportEvent = TetBet.Infrastructure.Entities.SportEvent;
 
-namespace TetBet.Infrastructure.Persistence.Repositories
+namespace TetBet.Infrastructure.Persistence.Repositories.Implementations
 {
     public class SportEventRepository : BaseRepository<SportEvent>
     {

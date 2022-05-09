@@ -4,10 +4,9 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using TetBet.Core.Repositories;
 using EntityBase = TetBet.Infrastructure.Entities.EntityBase;
 
-namespace TetBet.Infrastructure.Persistence.Repositories
+namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
 {
     public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
     {

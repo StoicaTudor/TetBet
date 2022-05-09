@@ -1,5 +1,4 @@
-﻿using TetBet.Core.Repositories;
-using TetBet.Infrastructure.Persistence.Repositories;
+﻿using TetBet.Infrastructure.Persistence.Repositories;
 using Unity;
 
 namespace TetBet.Infrastructure

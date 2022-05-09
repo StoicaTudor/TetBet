@@ -1,8 +1,8 @@
 using AutoMapper;
 using TetBet.Client.Application.Services.Interfaces;
 using TetBet.Core.Dtos.CreationDtos;
-using TetBet.Core.Repositories;
 using TetBet.Infrastructure.Entities;
+using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
 
 namespace TetBet.Client.Application.Services.Implementations
 {

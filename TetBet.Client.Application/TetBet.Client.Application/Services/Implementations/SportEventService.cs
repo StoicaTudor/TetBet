@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using TetBet.Client.Application.Services.Interfaces;
 using TetBet.Core.Dtos.GetDtos;
-using TetBet.Core.Repositories;
+using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
 
 namespace TetBet.Core.Services.Implementations
 {
