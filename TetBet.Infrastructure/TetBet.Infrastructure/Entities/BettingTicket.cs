@@ -11,6 +11,6 @@ namespace TetBet.Infrastructure.Entities
         public DateTime Date { get; set; }
 
         public Infrastructure.Entities.AccountDetails AccountDetails { get; set; }
-        public BettingTicketType BettingTicketType { get; set; }
+        public BettingTicketStatus BettingTicketStatus { get; set; }
     }
 }

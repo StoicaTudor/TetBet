@@ -1,6 +1,4 @@
-using TetBet.Client.Application.Services.Interfaces;
-
-namespace TetBet.Core.Services.Implementations
+namespace TetBet.Client.Application.Services.LoginService
 {
     public class LoginService : ILoginService
     {

@@ -1,11 +1,12 @@
 namespace TetBet.Infrastructure.Entities
 {
-    public enum BettingTicketType
+    public enum BettingTicketStatus
     {
         Winner,
         Loser,
         Pending,
         Delayed,
-        Canceled
+        Canceled,
+        NotSubmitted
     }
 }

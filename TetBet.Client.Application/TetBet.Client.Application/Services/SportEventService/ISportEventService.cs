@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using TetBet.Core.Dtos.GetDtos;
 
-namespace TetBet.Client.Application.Services.Interfaces
+namespace TetBet.Client.Application.Services.SportEventService
 {
     public interface ISportEventService
     {

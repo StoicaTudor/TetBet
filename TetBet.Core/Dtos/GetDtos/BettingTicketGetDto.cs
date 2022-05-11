@@ -10,6 +10,6 @@ namespace TetBet.Core.Dtos.GetDtos
         public IEnumerable<UserBetGetDto> UserBets { get; set; }
         public float Sum { get; set; }
         public DateTime Date { get; set; }
-        public BettingTicketType BettingTicketType { get; set; }
+        public BettingTicketStatus BettingTicketStatus { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-namespace TetBet.Client.Application.Services.Interfaces
+namespace TetBet.Client.Application.Services.LoginService
 {
     public interface ILoginService
     {

@@ -51,14 +51,9 @@ namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
             }
         }
 
-        public TEntity GetById(object id)
+        public virtual TEntity GetById(object id)
         {
             return _dbSet.FirstOrDefault(entity => entity.Id == (long) id);
-        }
-
-        public virtual TEntity GetByID(object id)
-        {
-            return _dbSet.Find(id);
         }
 
         public virtual void Insert(TEntity entity)

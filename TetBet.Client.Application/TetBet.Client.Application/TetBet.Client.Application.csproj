@@ -23,4 +23,11 @@
       <ProjectReference Include="..\..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="GeneralExceptions" />
+      <Folder Include="Services\LoginService\Exceptions" />
+      <Folder Include="Services\SportEventService\Exceptions" />
+      <Folder Include="Services\TransactionService\Exceptions" />
+    </ItemGroup>
+
 </Project>

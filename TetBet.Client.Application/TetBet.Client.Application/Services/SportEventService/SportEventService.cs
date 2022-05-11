@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using AutoMapper;
-using TetBet.Client.Application.Services.Interfaces;
 using TetBet.Core.Dtos.GetDtos;
 using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
 
-namespace TetBet.Core.Services.Implementations
+namespace TetBet.Client.Application.Services.SportEventService
 {
     public class SportEventService : ISportEventService
     {
