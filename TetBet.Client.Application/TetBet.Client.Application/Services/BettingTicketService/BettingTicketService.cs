@@ -17,14 +17,14 @@ namespace TetBet.Client.Application.Services.BettingTicketService
         private readonly IMapper _userMapper;
 
         private readonly ISessionService _sessionService;
-        private readonly Core.BusinessRules.Interfaces.IBettingTicketService _bettingTicketService;
+        private readonly Core.BusinessRules.BettingTicketService.IBettingTicketService _bettingTicketService;
 
         public BettingTicketService(
             IUnitOfWork unitOfWork,
             IMapper bettingTicketMapper,
             IMapper userBetMapper,
             ISessionService session,
-            Core.BusinessRules.Interfaces.IBettingTicketService bettingTicketService,
+            Core.BusinessRules.BettingTicketService.IBettingTicketService bettingTicketService,
             IMapper userMapper)
         {
             _unitOfWork = unitOfWork;

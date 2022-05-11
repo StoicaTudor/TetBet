@@ -1,8 +1,7 @@
 using System;
-using TetBet.Core.BusinessRules.Interfaces;
 using TetBet.Infrastructure.Entities;
 
-namespace TetBet.Core.BusinessRules.Implementations
+namespace TetBet.Core.BusinessRules.BettingTicketService
 {
     public class BettingTicketService : IBettingTicketService
     {
