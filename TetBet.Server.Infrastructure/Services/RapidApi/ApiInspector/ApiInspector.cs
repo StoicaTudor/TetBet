@@ -5,7 +5,7 @@ using RestSharp;
 using TetBet.Infrastructure.Entities;
 using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
 
-namespace TetBet.Server.RapidApi.ApiInspector
+namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
 {
     public class ApiInspector : IApiInspector
     {
@@ -41,7 +41,7 @@ namespace TetBet.Server.RapidApi.ApiInspector
 
             // TODO -> implement Get() here
             string key = _unitOfWork
-                .ConfigDataRepository
+                .RapidApiConfigDataRepository
                 .Get()
                 .First()
                 .Value;

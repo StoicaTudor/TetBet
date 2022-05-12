@@ -1,6 +1,6 @@
 using RestSharp;
 
-namespace TetBet.Server.RapidApi.ApiInspector
+namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
 {
     public interface IApiInspector
     {

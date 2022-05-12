@@ -1,6 +1,6 @@
 namespace TetBet.Infrastructure.Entities
 {
-    public class ConfigData : EntityBase
+    public class RapidApiConfigData : EntityBase
     {
         public string Key { get; set; }
         public string Value { get; set; }

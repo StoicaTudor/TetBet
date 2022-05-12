@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server", "TetBet.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Infrastructure", "..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj", "{3D7BA756-EC5A-4A43-995F-72DA9E90DF38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Infrastructure", "..\TetBet.Server.Infrastructure\TetBet.Server.Infrastructure.csproj", "{09696A75-1170-49FD-A248-B85CCAB734B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Application", "..\TetBet.Server.Application\TetBet.Server.Application.csproj", "{830E08A7-ADB7-4F25-A277-C4B16361C7E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{3D7BA756-EC5A-4A43-995F-72DA9E90DF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D7BA756-EC5A-4A43-995F-72DA9E90DF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D7BA756-EC5A-4A43-995F-72DA9E90DF38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09696A75-1170-49FD-A248-B85CCAB734B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09696A75-1170-49FD-A248-B85CCAB734B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09696A75-1170-49FD-A248-B85CCAB734B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09696A75-1170-49FD-A248-B85CCAB734B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{830E08A7-ADB7-4F25-A277-C4B16361C7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{830E08A7-ADB7-4F25-A277-C4B16361C7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{830E08A7-ADB7-4F25-A277-C4B16361C7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{830E08A7-ADB7-4F25-A277-C4B16361C7E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
