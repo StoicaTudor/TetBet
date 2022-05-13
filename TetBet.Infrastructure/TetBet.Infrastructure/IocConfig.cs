@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TetBet.Infrastructure.Persistence;
 using Unity;
 using Unity.Injection;

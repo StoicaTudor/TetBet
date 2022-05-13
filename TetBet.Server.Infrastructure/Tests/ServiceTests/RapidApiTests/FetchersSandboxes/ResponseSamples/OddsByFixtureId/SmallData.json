@@ -1,0 +1,133 @@
+{
+  "get": "odds",
+  "parameters": {
+    "fixture": "764267"
+  },
+  "errors": [],
+  "results": 1,
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "response": [
+    {
+      "league": {
+        "id": 781,
+        "name": "III Liga - Group 2",
+        "country": "Poland",
+        "logo": "https://media.api-sports.io/football/leagues/781.png",
+        "flag": "https://media.api-sports.io/flags/pl.svg",
+        "season": 2021
+      },
+      "fixture": {
+        "id": 764267,
+        "timezone": "UTC",
+        "date": "2022-05-13T16:00:00+00:00",
+        "timestamp": 1652457600
+      },
+      "update": "2022-05-13T12:01:11+00:00",
+      "bookmakers": [
+        {
+          "id": 6,
+          "name": "Bwin",
+          "bets": [
+            {
+              "id": 1,
+              "name": "Match Winner",
+              "values": [
+                {
+                  "value": "Home",
+                  "odd": "1.73"
+                },
+                {
+                  "value": "Draw",
+                  "odd": "3.50"
+                },
+                {
+                  "value": "Away",
+                  "odd": "3.80"
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "name": "Goals Over/Under",
+              "values": [
+                {
+                  "value": "Over 3.5",
+                  "odd": "2.75"
+                },
+                {
+                  "value": "Under 3.5",
+                  "odd": "1.39"
+                },
+                {
+                  "value": "Over 1.5",
+                  "odd": "1.23"
+                },
+                {
+                  "value": "Under 1.5",
+                  "odd": "3.75"
+                },
+                {
+                  "value": "Over 2.5",
+                  "odd": "1.71"
+                },
+                {
+                  "value": "Under 2.5",
+                  "odd": "2.00"
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "name": "Both Teams Score",
+              "values": [
+                {
+                  "value": "Yes",
+                  "odd": "1.68"
+                },
+                {
+                  "value": "No",
+                  "odd": "2.00"
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "name": "Double Chance",
+              "values": [
+                {
+                  "value": "Home/Draw",
+                  "odd": "1.22"
+                },
+                {
+                  "value": "Home/Away",
+                  "odd": "1.25"
+                },
+                {
+                  "value": "Draw/Away",
+                  "odd": "1.98"
+                }
+              ]
+            },
+            {
+              "id": 21,
+              "name": "Odd/Even",
+              "values": [
+                {
+                  "value": "Odd",
+                  "odd": "1.87"
+                },
+                {
+                  "value": "Even",
+                  "odd": "1.82"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
