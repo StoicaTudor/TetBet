@@ -4,7 +4,7 @@ using TetBet.Client.Application.Services.BettingTicketService.Exceptions;
 using TetBet.Client.Application.Services.SessionService;
 using TetBet.Core.Dtos.CreationDtos;
 using TetBet.Infrastructure.Entities;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 
 namespace TetBet.Client.Application.Services.BettingTicketService
 {
@@ -46,19 +46,19 @@ namespace TetBet.Client.Application.Services.BettingTicketService
                 long sessionBettingTicketId = _sessionService.GetSessionBettingTicketId();
 
                 bettingTicket = _unitOfWork
-                    .BettingTicketRepository
+                    .BettingTicket
                     .GetById(sessionBettingTicketId);
             }
             catch (BettingTicketNotFoundException)
             {
                 User sessionUser = _unitOfWork
-                    .UserRepository
+                    .User
                     .GetById(_sessionService.GetSessionUserId());
 
                 bettingTicket = _bettingTicketService.GetEmptyBettingTicket(sessionUser.AccountDetails);
 
                 _unitOfWork
-                    .BettingTicketRepository
+                    .BettingTicket
                     .Insert(bettingTicket);
             }
 
@@ -66,7 +66,7 @@ namespace TetBet.Client.Application.Services.BettingTicketService
                 .UserBets
                 .Append(userBet);
 
-            _unitOfWork.BettingTicketRepository.Update(bettingTicket);
+            _unitOfWork.BettingTicket.Update(bettingTicket);
 
             _unitOfWork.Commit();
         }
@@ -75,12 +75,12 @@ namespace TetBet.Client.Application.Services.BettingTicketService
         {
             long bettingTicketId = _sessionService.GetSessionBettingTicketId();
             BettingTicket bettingTicket = _unitOfWork
-                .BettingTicketRepository
+                .BettingTicket
                 .GetById(bettingTicketId);
 
             bettingTicket.BettingTicketStatus = BettingTicketStatus.Pending;
 
-            _unitOfWork.BettingTicketRepository.Insert(bettingTicket);
+            _unitOfWork.BettingTicket.Insert(bettingTicket);
 
             _unitOfWork.Commit();
         }
@@ -90,7 +90,7 @@ namespace TetBet.Client.Application.Services.BettingTicketService
             long sessionBettingTicketId = _sessionService.GetSessionBettingTicketId();
 
             _unitOfWork
-                .BettingTicketRepository
+                .BettingTicket
                 .Delete(sessionBettingTicketId);
 
             _unitOfWork.Commit();

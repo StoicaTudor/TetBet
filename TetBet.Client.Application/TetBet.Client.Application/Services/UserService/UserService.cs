@@ -1,10 +1,9 @@
-using System;
 using AutoMapper;
 using TetBet.Client.Application.Services.SessionService;
 using TetBet.Client.Application.Services.UserService.Exceptions;
 using TetBet.Core.Dtos.GetDtos;
 using TetBet.Infrastructure.Entities;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 
 namespace TetBet.Client.Application.Services.UserService
 {
@@ -27,7 +26,7 @@ namespace TetBet.Client.Application.Services.UserService
         public UserGetDto GetUserById(long userId)
         {
             User user = _unitOfWork
-                            .UserRepository
+                            .User
                             .GetById(userId)
                         ?? throw new UserNotFoundException();
 
@@ -37,7 +36,7 @@ namespace TetBet.Client.Application.Services.UserService
         public UserGetDto GetSessionUser()
         {
             User user = _unitOfWork
-                            .UserRepository
+                            .User
                             .GetById(_session.GetSessionUserId())
                         ?? throw new UserNotFoundException();
 

@@ -1,7 +1,7 @@
 using AutoMapper;
 using TetBet.Core.Dtos.CreationDtos;
 using TetBet.Infrastructure.Entities;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 
 namespace TetBet.Client.Application.Services.TransactionService
 {
@@ -19,7 +19,7 @@ namespace TetBet.Client.Application.Services.TransactionService
         public void CreateTransaction(TransactionCreationDto transactionCreationDto)
         {
             var transaction = _transactionMapper.Map<Transaction>(transactionCreationDto);
-            _unitOfWork.TransactionRepository.Insert(transaction);
+            _unitOfWork.Transaction.Insert(transaction);
         }
     }
 }

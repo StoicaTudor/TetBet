@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using AutoMapper;
 using TetBet.Core.Dtos.GetDtos;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 
 namespace TetBet.Client.Application.Services.SportEventService
 {
@@ -19,13 +19,13 @@ namespace TetBet.Client.Application.Services.SportEventService
         public IEnumerable<SportEventGetDto> GetNearFutureActiveSportEvents(int nrDays)
         {
             // TODO: call the get properly
-            var sportEvents = _unitOfWork.SportEventRepository.Get();
+            var sportEvents = _unitOfWork.SportEvent.Get();
             return _sportEventMapper.Map<IEnumerable<SportEventGetDto>>(sportEvents);
         }
 
         public SportEventGetDto GetSportEventById(long id)
         {
-            var sportEvent = _unitOfWork.SportEventRepository.GetById(id);
+            var sportEvent = _unitOfWork.SportEvent.GetById(id);
             return _sportEventMapper.Map<SportEventGetDto>(sportEvent);
         }
     }
