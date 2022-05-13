@@ -5,9 +5,9 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Entities.ApiFixtureEnti
     public class Goals
     {
         [JsonPropertyName("home")]
-        public int HomeTeamGoals { get; set; }
+        public int? HomeTeamGoals { get; set; }
         
         [JsonPropertyName("away")]
-        public int AwayTeamGoals { get; set; }
+        public int? AwayTeamGoals { get; set; }
     }
 }

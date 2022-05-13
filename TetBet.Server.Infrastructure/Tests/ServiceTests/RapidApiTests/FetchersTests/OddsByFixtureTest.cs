@@ -5,20 +5,19 @@ using TetBet.Server.Infrastructure.Services.RapidApi.Entities;
 using TetBet.Server.Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities;
 using TetBet.Server.Infrastructure.Services.RapidApi.Parsers;
 
-namespace TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes
+namespace TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests
 {
     public class OddsByFixtureTest
     {
         private readonly string _testDataDirectory = Directory.GetCurrentDirectory() +
-                                                     "/../../../../TetBet.Server.Infrastructure/Tests/ServiceTests/RapidApiTests/FetchersSandboxes/ResponseSamples/OddsByFixtureId/";
+                                                     "/../../../../TetBet.Server.Infrastructure/Tests/ServiceTests/RapidApiTests/FetchersTests/ResponseSamples/OddsByFixture/";
 
         private readonly IJsonResponseParser<FixtureOdds> _fixtureOddsJsonParse = new FixtureOddsJsonParser();
 
         [Test]
         public void BigJsonCheckIfContentExists()
         {
-            string oddsByFixtureIdSample =
-                File.ReadAllText(_testDataDirectory + "BigData.json");
+            string oddsByFixtureIdSample = File.ReadAllText(_testDataDirectory + "BigData.json");
 
             FixtureOdds fixtureOdds = _fixtureOddsJsonParse.Parse(oddsByFixtureIdSample).First();
 
@@ -30,9 +29,7 @@ namespace TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.Fetchers
         [Test]
         public void SmallJsonCheckIfAllDataIsCorrect()
         {
-            string oddsByFixtureIdSample =
-                File.ReadAllText(
-                    _testDataDirectory + "SmallData.json");
+            string oddsByFixtureIdSample = File.ReadAllText(_testDataDirectory + "SmallData.json");
 
             FixtureOdds fixtureOdds = _fixtureOddsJsonParse.Parse(oddsByFixtureIdSample).First();
 

@@ -11,6 +11,6 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Entities.ApiFixtureEnti
         public string Name { get; set; }
         
         [JsonPropertyName("winner")]
-        public bool IsWinner { get; set; }
+        public bool? IsWinner { get; set; }
     }
 }

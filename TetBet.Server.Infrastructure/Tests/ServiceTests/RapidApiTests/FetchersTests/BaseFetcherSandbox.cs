@@ -7,7 +7,7 @@ using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football;
 using TetBet.Server.Infrastructure.Services.RapidApi.RequestService;
 using Unity;
 
-namespace TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes
+namespace TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests
 {
     public class BaseFetcherSandbox
     {

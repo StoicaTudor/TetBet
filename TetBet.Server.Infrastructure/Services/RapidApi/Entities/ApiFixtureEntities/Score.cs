@@ -7,7 +7,13 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Entities.ApiFixtureEnti
         [JsonPropertyName("halftime")]
         public RoundScore HalfTimeScore { get; set; }
         
-        [JsonPropertyName("halftime")]
+        [JsonPropertyName("fulltime")]
         public RoundScore FullTimeScore { get; set; }
+        
+        [JsonPropertyName("extratime")]
+        public RoundScore ExtraTimeScore { get; set; }
+        
+        [JsonPropertyName("penalty")]
+        public RoundScore PenaltyScore { get; set; }
     }
 }

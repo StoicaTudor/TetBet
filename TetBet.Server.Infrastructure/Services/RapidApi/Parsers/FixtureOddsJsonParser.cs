@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using TetBet.Server.Infrastructure.Services.RapidApi.Entities;
