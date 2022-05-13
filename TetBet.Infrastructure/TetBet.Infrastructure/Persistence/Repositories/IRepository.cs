@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
+namespace TetBet.Infrastructure.Persistence.Repositories
 {
     public interface IRepository<TEntity>
     {

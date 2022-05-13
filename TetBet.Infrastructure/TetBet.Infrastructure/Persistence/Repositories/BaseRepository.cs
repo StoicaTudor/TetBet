@@ -6,9 +6,9 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using EntityBase = TetBet.Infrastructure.Entities.EntityBase;
 
-namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
+namespace TetBet.Infrastructure.Persistence.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
+    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
     {
         private readonly ApplicationContext _context;
         private readonly DbSet<TEntity> _dbSet;
@@ -19,7 +19,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
             _dbSet = context.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> Get(
+        public  IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "")
@@ -51,23 +51,23 @@ namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
             }
         }
 
-        public virtual TEntity GetById(object id)
+        public  TEntity GetById(object id)
         {
             return _dbSet.FirstOrDefault(entity => entity.Id == (long) id);
         }
 
-        public virtual void Insert(TEntity entity)
+        public  void Insert(TEntity entity)
         {
             _dbSet.Add(entity);
         }
 
-        public virtual void Delete(object id)
+        public  void Delete(object id)
         {
             TEntity entityToDelete = _dbSet.Find(id);
             Delete(entityToDelete);
         }
 
-        public virtual void Delete(TEntity entityToDelete)
+        public  void Delete(TEntity entityToDelete)
         {
             if (_context.Entry(entityToDelete).State == EntityState.Detached)
             {
@@ -77,7 +77,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
             _dbSet.Remove(entityToDelete);
         }
 
-        public virtual void Update(TEntity entityToUpdate)
+        public  void Update(TEntity entityToUpdate)
         {
             if (entityToUpdate == null)
             {
@@ -93,7 +93,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories.Interfaces
             _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
-        public virtual bool IsInserted(TEntity entity)
+        public  bool IsInserted(TEntity entity)
         {
             return _dbSet.Find(entity.Id) != null;
         }

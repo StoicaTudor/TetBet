@@ -3,7 +3,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using TetBet.Infrastructure.Entities;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 
 namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
 {
@@ -29,7 +29,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
             rapidApiKey.LastUpdateDate = DateTime.Now;
 
             _unitOfWork
-                .RapidApiKeyRepository
+                .RapidApiKey
                 .Update(rapidApiKey);
 
             _unitOfWork.Commit();
@@ -41,7 +41,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
 
             // TODO -> implement Get() here
             string key = _unitOfWork
-                .RapidApiConfigDataRepository
+                .RapidApiConfigData
                 .Get()
                 .First()
                 .Value;
@@ -49,7 +49,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
             // based on the last used rapid api key, get the RapidApiKey object from db
             // TODO -> implement Get() here using key
             return _unitOfWork
-                .RapidApiKeyRepository
+                .RapidApiKey
                 .Get()
                 .First();
         }

@@ -1,5 +1,5 @@
 using System.Linq;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using TetBet.Server.Infrastructure.Services.RapidApi.KeySelector;
 using TetBet.Server.Infrastructure.Services.RapidApi.RequestService.Exceptions;
 
@@ -21,7 +21,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.RequestService
         {
             // TODO: implement this Get -> var client = new RestClient("https://api-football-v1.p.rapidapi.com/v3/odds/bets");
             string rapidApiRootUrl = _unitOfWork
-                .RapidApiConfigDataRepository
+                .RapidApiConfigData
                 .Get()
                 .First()
                 .Value;
@@ -38,7 +38,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.RequestService
         {
             // TODO: implement this Get -> request.AddHeader("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com");
             string rapidApiHost = _unitOfWork
-                .RapidApiConfigDataRepository
+                .RapidApiConfigData
                 .Get()
                 .First()
                 .Value;

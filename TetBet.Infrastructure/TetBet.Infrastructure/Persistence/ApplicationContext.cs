@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TetBet.Infrastructure.Entities;
 using AccountDetails = TetBet.Infrastructure.Entities.AccountDetails;
 using Bet = TetBet.Infrastructure.Entities.Bet;
 using BettingTicket = TetBet.Infrastructure.Entities.BettingTicket;
@@ -18,6 +19,11 @@ namespace TetBet.Infrastructure.Persistence
 {
     public class ApplicationContext : DbContext
     {
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+        {
+
+        }
+
         public DbSet<AccountDetails> AccountDetails { get; set; }
         public DbSet<Bet> Bet { get; set; }
         public DbSet<BettingTicket> BettingTicket { get; set; }
@@ -32,5 +38,8 @@ namespace TetBet.Infrastructure.Persistence
         public DbSet<Transaction> Transaction { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<UserBet> UserBet { get; set; }
+
+        public DbSet<RapidApiConfigData> RapidApiConfigData { get; set; }
+        public DbSet<RapidApiKey> RapidApiKey { get; set; }
     }
 }

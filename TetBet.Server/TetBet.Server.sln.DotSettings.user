@@ -1,2 +1,17 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fhome_002Fcitadin_002FDocuments_002FFacultate_002FA3S2_002FSD_002FLab_002FFinalProject_002FUrlBuilder_002Dmaster_002FUrlBuilder_002Fbin_002FDebug_002FUrlBuilder_002Edll/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fhome_002Fcitadin_002FDocuments_002FFacultate_002FA3S2_002FSD_002FLab_002FFinalProject_002FUrlBuilder_002Dmaster_002FUrlBuilder_002Fbin_002FDebug_002FUrlBuilder_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=835fb7b5_002Dea9e_002D4859_002Daaaa_002D7e91ca32b778/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.BaseFetcherSandbox.GetResponse&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d8a6f6ed_002Da781_002D415e_002D80de_002Dbb7d00c52a75/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetResponse #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.BaseFetcherSandbox&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fae57336_002D7bc5_002D493b_002D968e_002D64d7d9b32017/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.BaseFetcherSandbox.GetResponse&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

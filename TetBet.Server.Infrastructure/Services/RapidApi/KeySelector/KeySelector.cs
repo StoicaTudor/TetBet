@@ -1,5 +1,5 @@
 using System.Linq;
-using TetBet.Infrastructure.Persistence.Repositories.Interfaces;
+using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 
 namespace TetBet.Server.Infrastructure.Services.RapidApi.KeySelector
 {
@@ -15,7 +15,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.KeySelector
         public string GetKeyWithMostAvailableCalls()
         {
             return _unitOfWork
-                .RapidApiKeyRepository
+                .RapidApiKey
                 .Get()
                 .OrderByDescending(key => key.RemainingCalls)
                 .First()
