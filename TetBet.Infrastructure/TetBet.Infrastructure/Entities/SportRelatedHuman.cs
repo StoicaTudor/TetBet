@@ -7,7 +7,9 @@ namespace TetBet.Infrastructure.Entities
     public class SportRelatedHuman : Infrastructure.Entities.EntityBase
     {
         public string Name { get; set; }
-        public Infrastructure.Entities.Country Nationality { get; set; }
+        public Country Nationality { get; set; }
         public SportRelatedHumanType SportRelatedHumanType { get; set; }
+        
+        public long RapidApiId { get; set; }
     }
 }

@@ -11,5 +11,7 @@ namespace TetBet.Infrastructure.Entities
         public Country Country { get; set; }
 
         public IEnumerable<SportEntity> SportEntities { get; set; }
+        
+        public long RapidApiId { get; set; }
     }
 }

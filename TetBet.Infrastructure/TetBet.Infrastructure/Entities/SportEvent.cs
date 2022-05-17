@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace TetBet.Infrastructure.Entities
 {
-    public class SportEvent : Infrastructure.Entities.EntityBase
+    public class SportEvent : EntityBase
     {
-        public Infrastructure.Entities.Sport Sport { get; set; }
+        public Competition Competition { get; set; }
         public SportEventStatus SportEventStatus { get; set; }
 
         public string Location { get; set; }
@@ -14,5 +14,7 @@ namespace TetBet.Infrastructure.Entities
         public IEnumerable<SportEventBet> AvailableBets { get; set; }
 
         public string SportEventDetails { get; set; }
+        
+        public long RapidApiId { get; set; }
     }
 }

@@ -11,8 +11,3 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Entities
         [JsonPropertyName("bookmakers")] public IEnumerable<Bookmaker> Bookmakers { get; set; }
     }
 }
-
-// public int FixtureId { get; set; }
-// public int BetTypeId { get; set; }
-// public float OddValue { get; set; }
-// public string OddName { get; set; }

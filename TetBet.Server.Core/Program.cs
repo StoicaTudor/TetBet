@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TetBet.Server
+namespace TetBet.Server.Core
 {
     class Program
     {

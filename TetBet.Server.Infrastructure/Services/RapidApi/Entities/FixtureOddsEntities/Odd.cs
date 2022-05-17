@@ -5,6 +5,6 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Entities.FixtureOddsEnt
     public class Odd
     {
         [JsonPropertyName("value")] public string Name { get; set; }
-        [JsonPropertyName("odd")] public string OddValue { get; set; }
+        [JsonPropertyName("odd")] public string Value { get; set; }
     }
 }

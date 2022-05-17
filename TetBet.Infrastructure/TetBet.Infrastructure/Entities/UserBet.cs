@@ -1,9 +1,9 @@
 
 namespace TetBet.Infrastructure.Entities
 {
-    public class UserBet : Infrastructure.Entities.EntityBase
+    public class UserBet : EntityBase
     {
-        public Infrastructure.Entities.SportEventBet SportEventBet { get; set; }
+        public SportEventBet SportEventBet { get; set; }
         public UserBetStatus UserBetStatus{ get; set; }
     }
 }

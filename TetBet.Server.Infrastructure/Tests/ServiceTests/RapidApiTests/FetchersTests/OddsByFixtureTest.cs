@@ -10,7 +10,7 @@ namespace TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.Fetchers
     public class OddsByFixtureTest
     {
         private readonly string _testDataDirectory = Directory.GetCurrentDirectory() +
-                                                     "/../../../../TetBet.Server.Infrastructure/Tests/ServiceTests/RapidApiTests/FetchersTests/ResponseSamples/OddsByFixture/";
+                                                     "/../../../../TetBet.Server.Core.Infrastructure/Tests/ServiceTests/RapidApiTests/FetchersTests/ResponseSamples/OddsByFixture/";
 
         private readonly IJsonResponseParser<FixtureOdds> _fixtureOddsJsonParse = new FixtureOddsJsonParser();
 

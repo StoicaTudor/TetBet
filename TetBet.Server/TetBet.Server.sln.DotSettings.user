@@ -1,59 +1,12 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fhome_002Fcitadin_002FDocuments_002FFacultate_002FA3S2_002FSD_002FLab_002FFinalProject_002FUrlBuilder_002Dmaster_002FUrlBuilder_002Fbin_002FDebug_002FUrlBuilder_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/citadin/.cache/JetBrains/Rider2021.2/resharper-host/temp/Rider/vAny/CoverageData/_TetBet.Server.1360600490/Snapshot/snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2c70c50f_002D02da_002D47f1_002D8a35_002D92c83d87ea92/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BigDataCheckIfDataPresent #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=156c70ac_002D9ad7_002D44f3_002Da292_002Dd3ede8cc91f8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FixtureOddsProfileTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest.BigDataCheckIfDataPresent&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=46c42667_002D4c31_002D4c6b_002D9853_002D69c34b4f24d0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BigJsonCheckIfContentExists" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.OddsByFixtureTest&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest.BigDataCheckIfDataPresent&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7776c743_002Dc53b_002D4e4f_002Daf3b_002Db14728d4649c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BigDataCheckIfDataPresent #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest.BigDataCheckIfDataPresent&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=805a9422_002D0761_002D4e71_002D824c_002D4b027f7de643/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BigDataCheckIfDataPresent" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=835fb7b5_002Dea9e_002D4859_002Daaaa_002D7e91ca32b778/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.BaseFetcherSandbox.GetResponse&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=97f9f8c9_002D7b21_002D4e87_002D8950_002D54e232031a90/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BigDataCheckIfDataPresent #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest.BigDataCheckIfDataPresent&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b3ae6d0a_002De929_002D4d19_002Daa5d_002D9703ac5af847/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.OddsByFixtureIdSandbox.GetResponse&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c7b7edcb_002D1ffe_002D442f_002Da902_002D46c2c16d6799/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.OddsByFixtureTest.BigJsonCheckIfContentExists&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d8a6f6ed_002Da781_002D415e_002D80de_002Dbb7d00c52a75/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.OddsByFixtureIdSandbox.GetResponse&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fae57336_002D7bc5_002D493b_002D968e_002D64d7d9b32017/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetResponse #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersSandboxes.BaseFetcherSandbox.GetResponse&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::830E08A7-ADB7-4F25-A277-C4B16361C7E7::net5.0::TetBet.Server.Application.Tests.Mappers.RapidApiMappersTest.FixtureOddsProfileTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fed9fd3f_002D2f2e_002D4720_002Dae5f_002De554ea8bdf7c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BigDataCheckIfDataPresent #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest.BigDataCheckIfDataPresent&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::830E08A7-ADB7-4F25-A277-C4B16361C7E7::net5.0::TetBet.Server.Application.Tests.Mappers.RapidApiMappersTest.FixtureOddsProfileTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
