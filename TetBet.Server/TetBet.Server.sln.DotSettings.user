@@ -1,12 +1,2 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=156c70ac_002D9ad7_002D44f3_002Da292_002Dd3ede8cc91f8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FixtureOddsProfileTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::830E08A7-ADB7-4F25-A277-C4B16361C7E7::net5.0::TetBet.Server.Application.Tests.Mappers.RapidApiMappersTest.FixtureOddsProfileTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fed9fd3f_002D2f2e_002D4720_002Dae5f_002De554ea8bdf7c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BigDataCheckIfDataPresent #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::09696A75-1170-49FD-A248-B85CCAB734B1::net5.0::TetBet.Server.Infrastructure.Tests.ServiceTests.RapidApiTests.FetchersTests.FixturesTest.BigDataCheckIfDataPresent&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::830E08A7-ADB7-4F25-A277-C4B16361C7E7::net5.0::TetBet.Server.Application.Tests.Mappers.RapidApiMappersTest.FixtureOddsProfileTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/citadin/.cache/JetBrains/Rider2021.2/resharper-host/temp/Rider/vAny/CoverageData/_TetBet.Server.1360600490/Snapshot/snapshot.utdcvr</s:String></wpf:ResourceDictionary>

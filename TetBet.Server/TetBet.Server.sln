@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server", "TetBet.Server.csproj", "{80078AB3-890F-46F9-AF0A-AB29CF6E498E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Infrastructure", "..\TetBet.Server.Infrastructure\TetBet.Server.Infrastructure.csproj", "{898353B3-137A-4048-AB43-EC2A7FDA8996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Core", "..\TetBet.Server.Core\TetBet.Server.Core.csproj", "{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Infrastructure", "..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj", "{1D681A57-9214-49A4-B140-B11303837D55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80078AB3-890F-46F9-AF0A-AB29CF6E498E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80078AB3-890F-46F9-AF0A-AB29CF6E498E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80078AB3-890F-46F9-AF0A-AB29CF6E498E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80078AB3-890F-46F9-AF0A-AB29CF6E498E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898353B3-137A-4048-AB43-EC2A7FDA8996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898353B3-137A-4048-AB43-EC2A7FDA8996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898353B3-137A-4048-AB43-EC2A7FDA8996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898353B3-137A-4048-AB43-EC2A7FDA8996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D681A57-9214-49A4-B140-B11303837D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D681A57-9214-49A4-B140-B11303837D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D681A57-9214-49A4-B140-B11303837D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D681A57-9214-49A4-B140-B11303837D55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
