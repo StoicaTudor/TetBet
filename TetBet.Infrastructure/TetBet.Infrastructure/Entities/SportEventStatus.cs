@@ -1,8 +1,9 @@
 namespace TetBet.Infrastructure.Entities
 {
-    public class SportEventStatus : Infrastructure.Entities.EntityBase
+    public enum SportEventStatus
     {
-        public string Message { get; set; }
-        public string Description { get; set; }
+        NotStarted,
+        InProgress,
+        Ended
     }
 }

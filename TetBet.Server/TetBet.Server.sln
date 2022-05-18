@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Core", "..\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Infrastructure", "..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj", "{1D681A57-9214-49A4-B140-B11303837D55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Application", "..\TetBet.Server.Application\TetBet.Server.Application.csproj", "{7D3E2F55-385E-469D-BF87-378C9F5722EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{1D681A57-9214-49A4-B140-B11303837D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D681A57-9214-49A4-B140-B11303837D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D681A57-9214-49A4-B140-B11303837D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

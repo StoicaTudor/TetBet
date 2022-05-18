@@ -5,13 +5,15 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationContext _dbContext;
-        
+
         private IRepository<User> _userRepository;
         private IRepository<SportEvent> _sportEventRepository;
         private IRepository<BettingTicket> _bettingTicketRepository;
         private IRepository<Transaction> _transactionRepository;
         private IRepository<RapidApiKey> _rapidApiKeyRepository;
         private IRepository<RapidApiConfigData> _rapidApiConfigData;
+        private IRepository<Competition> _competitionRepository;
+        private IRepository<SportEntity> _sportEntity;
 
         public UnitOfWork(ApplicationContext dbContext)
         {
@@ -35,6 +37,12 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
 
         public IRepository<RapidApiConfigData> RapidApiConfigData =>
             _rapidApiConfigData ??= new BaseRepository<RapidApiConfigData>(_dbContext);
+
+        public IRepository<Competition> Competition =>
+            _competitionRepository ??= new BaseRepository<Competition>(_dbContext);
+
+        public IRepository<SportEntity> SportEntity =>
+            _sportEntity ??= new BaseRepository<SportEntity>(_dbContext);
 
         public void Commit()
         {

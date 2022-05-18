@@ -10,6 +10,8 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         public IRepository<Transaction> Transaction { get; }
         public IRepository<RapidApiKey> RapidApiKey { get; }
         public IRepository<RapidApiConfigData> RapidApiConfigData { get; }
+        public IRepository<Competition> Competition { get; }
+        public IRepository<SportEntity> SportEntity { get; }
         void Commit();
     }
 }
