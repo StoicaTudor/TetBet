@@ -10,15 +10,9 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Parsers
 {
     public class TeamsJsonParser : IJsonResponseParser<Team>
     {
-        public int LeagueId { get; set; } = 0;
-        public int Season { get; set; } = 0;
-
         public IEnumerable<Team> Parse(string response)
         {
             IEnumerable<Team> teams = new List<Team>();
-
-            if (LeagueId == 0 || Season == 0)
-                throw new ParserPropertiesNotSetException();
 
             JToken dataResponseToken = JObject
                 .Parse(response)
@@ -52,7 +46,6 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Parsers
                 {
                     Id = int.Parse(teamToken.SelectToken("id").ToString()),
                     Name = teamToken.SelectToken("name").ToString(),
-                    LeagueId = LeagueId,
                     ManagerName = "",
                     StadiumName = venueToken.SelectToken("name").ToString()
                 };

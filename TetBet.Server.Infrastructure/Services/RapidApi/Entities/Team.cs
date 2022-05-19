@@ -8,6 +8,5 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Entities
         public string Name;
         public string StadiumName;
         public string ManagerName;
-        public long LeagueId;
     }
 }

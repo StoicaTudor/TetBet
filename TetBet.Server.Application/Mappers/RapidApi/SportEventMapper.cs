@@ -27,8 +27,7 @@ namespace TetBet.Server.Application.Mappers.RapidApi
                 Competition = ApiLeagueToCompetition(apiFixture.League),
                 SportEventDetails = JsonSerializer.Serialize(ApiFixtureToFootballEvent(apiFixture))
             };
-
-
+        
         private SportEventStatus ApiFixtureStatusToSportEventStatus(Status apiFixtureStatus)
         {
             switch (apiFixtureStatus.FullName)

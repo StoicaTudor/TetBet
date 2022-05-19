@@ -25,9 +25,6 @@
       <Reference Include="TetBet.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>..\..\TetBet.Core\bin\Debug\net5.0\TetBet.Core.dll</HintPath>
       </Reference>
-      <Reference Include="TetBet.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\TetBet.Data\obj\Debug\net5.0\TetBet.Data.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
 </Project>

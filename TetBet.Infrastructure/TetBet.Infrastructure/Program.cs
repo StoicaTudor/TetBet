@@ -1,16 +1,15 @@
-using Microsoft.Extensions.Hosting;
+using TetBet.Infrastructure.Persistence;
 
 namespace TetBet.Infrastructure
 {
     public class Program
     {
-        // public static void Main(string[] args)
-        // {
-        //     CreateHostBuilder(args).Build().Run();
-        // }
-        //
-        // public static IHostBuilder CreateHostBuilder(string[] args) =>
-        //     Host.CreateDefaultBuilder(args)
-        //         .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        public static void Main(string[] args)
+        {
+            IocConfig.RegisterComponents();
+            var container = IocConfig.GetConfiguredContainer();
+
+            var applicationContext = container.Resolve(typeof(ApplicationContext), "ApplicationContext");
+        }
     }
 }

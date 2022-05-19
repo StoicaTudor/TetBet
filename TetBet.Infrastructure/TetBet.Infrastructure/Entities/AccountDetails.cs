@@ -5,8 +5,6 @@ namespace TetBet.Infrastructure.Entities
 {
     public class AccountDetails : EntityBase
     {
-        public User User { get; set; }
-
         public DateTime DateRegistered { get; set; }
         public float AccountBalance { get; set; }
 

@@ -21,7 +21,7 @@ namespace TetBet.Infrastructure.Persistence
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-
+            
         }
 
         public DbSet<AccountDetails> AccountDetails { get; set; }
