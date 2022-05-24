@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
       <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
       <ProjectReference Include="..\TetBet.Server.Core\TetBet.Server.Core.csproj" />
       <ProjectReference Include="..\TetBet.Server.Infrastructure\TetBet.Server.Infrastructure.csproj" />

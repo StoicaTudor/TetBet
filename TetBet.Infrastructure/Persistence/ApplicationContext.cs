@@ -37,9 +37,10 @@ namespace TetBet.Infrastructure.Persistence
         public DbSet<BettingTicket> BettingTicket { get; set; }
         public DbSet<Competition> Competition { get; set; }
         public DbSet<Country> Country { get; set; }
-        public DbSet<SportEntity> SportEntity { get; set; }
         public DbSet<GenericBet> GenericBet { get; set; }
+        public DbSet<Odd> Odd { get; set; }
         public DbSet<Sport> Sport { get; set; }
+        public DbSet<SportEntity> SportEntity { get; set; }
         public DbSet<SportEvent> SportEvent { get; set; }
         public DbSet<SportEventBet> SportEventBet { get; set; }
         public DbSet<SportRelatedHuman> SportRelatedHuman { get; set; }

@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Core", "..\TetBet.Server.Core\TetBet.Server.Core.csproj", "{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Infrastructure", "..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj", "{1D681A57-9214-49A4-B140-B11303837D55}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Server.Application", "..\TetBet.Server.Application\TetBet.Server.Application.csproj", "{7D3E2F55-385E-469D-BF87-378C9F5722EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetBet.Infrastructure", "..\TetBet.Infrastructure\TetBet.Infrastructure.csproj", "{9111E78D-DA74-45D7-A971-93AFA4832F38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,13 +28,13 @@ Global
 		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2019B3E4-E5F0-4643-9A55-92F3D3F3A349}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D681A57-9214-49A4-B140-B11303837D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D681A57-9214-49A4-B140-B11303837D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D681A57-9214-49A4-B140-B11303837D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D681A57-9214-49A4-B140-B11303837D55}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D3E2F55-385E-469D-BF87-378C9F5722EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9111E78D-DA74-45D7-A971-93AFA4832F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9111E78D-DA74-45D7-A971-93AFA4832F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9111E78D-DA74-45D7-A971-93AFA4832F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9111E78D-DA74-45D7-A971-93AFA4832F38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

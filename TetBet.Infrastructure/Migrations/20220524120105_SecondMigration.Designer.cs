@@ -9,8 +9,8 @@ using TetBet.Infrastructure.Persistence;
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220524113359_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20220524120105_SecondMigration")]
+    partial class SecondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
