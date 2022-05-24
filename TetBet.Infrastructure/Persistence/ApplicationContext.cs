@@ -21,7 +21,15 @@ namespace TetBet.Infrastructure.Persistence
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySQL(
+                    "server = localhost; port = 3306; user = Citadin2; password = Aaladin2000-; database = TetBet");
+            }
         }
 
         public DbSet<AccountDetails> AccountDetails { get; set; }
@@ -29,7 +37,7 @@ namespace TetBet.Infrastructure.Persistence
         public DbSet<BettingTicket> BettingTicket { get; set; }
         public DbSet<Competition> Competition { get; set; }
         public DbSet<Country> Country { get; set; }
-        public DbSet<SportEntity> FootballEvent { get; set; }
+        public DbSet<SportEntity> SportEntity { get; set; }
         public DbSet<GenericBet> GenericBet { get; set; }
         public DbSet<Sport> Sport { get; set; }
         public DbSet<SportEvent> SportEvent { get; set; }
