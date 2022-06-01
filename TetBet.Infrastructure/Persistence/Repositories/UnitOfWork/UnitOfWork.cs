@@ -1,4 +1,5 @@
 using TetBet.Infrastructure.Entities;
+using TetBet.Infrastructure.Persistence.Repositories.EntitiesIncludes;
 
 namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
 {
@@ -14,11 +15,11 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         private IRepository<RapidApiConfigData> _rapidApiConfigData;
         private IRepository<Competition> _competitionRepository;
         private IRepository<SportEntity> _sportEntity;
+        private IRepository<AccountDetails> _accountDetails;
+        private EntitiesIncluder<User> _userIncluder;
 
         public UnitOfWork(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+            => _dbContext = dbContext;
 
         public IRepository<User> User =>
             _userRepository ??= new BaseRepository<User>(_dbContext);
@@ -44,9 +45,13 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         public IRepository<SportEntity> SportEntity =>
             _sportEntity ??= new BaseRepository<SportEntity>(_dbContext);
 
+        public EntitiesIncluder<User> UserIncludes =>
+            _userIncluder ??= new UserIncludes();
+
+        public IRepository<AccountDetails> AccountDetails =>
+            _accountDetails ??= new BaseRepository<AccountDetails>(_dbContext);
+
         public void Commit()
-        {
-            _dbContext.SaveChanges();
-        }
+            => _dbContext.SaveChanges();
     }
 }

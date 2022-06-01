@@ -9,7 +9,7 @@ namespace TetBet.Infrastructure.Entities
      * a solo chess player,
      * anything which is eligible to participate in a competition of any kind
      */
-    public class SportEntity : Infrastructure.Entities.EntityBase
+    public class SportEntity : EntityBase
     {
         public string Name { get; set; }
         public Infrastructure.Entities.Country Country { get; set; }

@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using TetBet.Infrastructure.Persistence;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using Unity;
@@ -23,11 +23,6 @@ namespace TetBet.Infrastructure
                 "ApplicationContext",
                 new ApplicationContext(optionsBuilder),
                 new SingletonLifetimeManager());
-
-            // Container.RegisterSingleton<ApplicationContext>(new InjectionConstructor(
-            //     new MongoClient(
-            //         "mongodb+srv://Tudor:123456789tT--@cluster0.dajot.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"),
-            //     "TetBet"));
 
             Container.RegisterType<IUnitOfWork, UnitOfWork>(
                 new InjectionConstructor(new ApplicationContext(optionsBuilder)));

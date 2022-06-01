@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using TetBet.Infrastructure;
-using TetBet.Infrastructure.Entities;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using Unity;
+
 
 namespace TetBet.Server
 {
@@ -12,10 +11,13 @@ namespace TetBet.Server
         static void Main(string[] args)
         {
             IocConfig.RegisterComponents();
-            var container = IocConfig.GetConfiguredContainer();
+            IUnityContainer container = IocConfig.GetConfiguredContainer();
 
             IUnitOfWork unitOfWork = container.Resolve<IUnitOfWork>();
-            var user = unitOfWork.User.Get();
+
+            var sus = unitOfWork
+                .User
+                .Get(user => user.Id == 1, unitOfWork.UserIncludes.IncludeEntities);
             Console.WriteLine("aaa");
         }
     }

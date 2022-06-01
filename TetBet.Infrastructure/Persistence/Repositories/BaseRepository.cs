@@ -4,6 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using TetBet.Infrastructure.Entities;
 using EntityBase = TetBet.Infrastructure.Entities.EntityBase;
 
 namespace TetBet.Infrastructure.Persistence.Repositories
@@ -21,34 +22,21 @@ namespace TetBet.Infrastructure.Persistence.Repositories
 
         public IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "")
+            Func<IQueryable<TEntity>, IQueryable<TEntity>> includeProperties = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
         {
             IQueryable<TEntity> query = _dbSet;
 
             if (filter != null)
-            {
                 query = query.Where(filter);
-            }
 
             if (includeProperties != null)
-            {
-                foreach (var includeProperty in includeProperties.Split
-                    (new char[] {','}, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includeProperty);
-                }
-            }
-
+                query = includeProperties(query);
 
             if (orderBy != null)
-            {
                 return orderBy(query).ToList();
-            }
-            else
-            {
-                return query.ToList();
-            }
+
+            return query.ToList();
         }
 
         public TEntity GetById(object id)
@@ -114,5 +102,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories
 
             return exists;
         }
+
+        public DbSet<TEntity> DbSet => _dbSet;
     }
 }

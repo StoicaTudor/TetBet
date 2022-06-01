@@ -1,0 +1,66 @@
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using TetBet.Infrastructure.Entities;
+
+namespace TetBet.Infrastructure.Persistence.Repositories.EntitiesIncludes
+{
+    public class UserIncludes : EntitiesIncluder<User>
+    {
+        protected override IQueryable<User> SetIncludes(IQueryable<User> query)
+            => query
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.Transactions)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.BettingTickets)
+                .ThenInclude(bettingTicket => bettingTicket.UserBets)
+                .ThenInclude(userBet => userBet.SportEventBet)
+                .ThenInclude(sportEventBet => sportEventBet.SportEvent)
+                .ThenInclude(sportEvent => sportEvent.Competition)
+                .ThenInclude(competition => competition.Country)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.Transactions)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.BettingTickets)
+                .ThenInclude(bettingTicket => bettingTicket.UserBets)
+                .ThenInclude(userBet => userBet.SportEventBet)
+                .ThenInclude(sportEventBet => sportEventBet.SportEvent)
+                .ThenInclude(sportEvent => sportEvent.Competition)
+                .ThenInclude(competition => competition.Sport)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.Transactions)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.BettingTickets)
+                .ThenInclude(bettingTicket => bettingTicket.UserBets)
+                .ThenInclude(userBet => userBet.SportEventBet)
+                .ThenInclude(sportEventBet => sportEventBet.SportEvent)
+                .ThenInclude(sportEvent => sportEvent.Competition)
+                .ThenInclude(competition => competition.SportEntities)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.Transactions)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.BettingTickets)
+                .ThenInclude(bettingTicket => bettingTicket.UserBets)
+                .ThenInclude(userBet => userBet.SportEventBet)
+                .ThenInclude(sportEventBet => sportEventBet.SportEvent)
+                .ThenInclude(sportEvent => sportEvent.AvailableBets)
+                .ThenInclude(availableSportEventBets => availableSportEventBets.Bet)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.Transactions)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.BettingTickets)
+                .ThenInclude(bettingTicket => bettingTicket.UserBets)
+                .ThenInclude(userBet => userBet.SportEventBet)
+                .ThenInclude(sportEventBet => sportEventBet.SportEvent)
+                .ThenInclude(sportEvent => sportEvent.AvailableBets)
+                .ThenInclude(availableSportEventBets => availableSportEventBets.Odds)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.Transactions)
+                .Include(user => user.AccountDetails)
+                .ThenInclude(accountDetails => accountDetails.BettingTickets)
+                .ThenInclude(bettingTicket => bettingTicket.UserBets)
+                .ThenInclude(userBet => userBet.SportEventBet)
+                .ThenInclude(sportEventBet => sportEventBet.SportEvent)
+                .ThenInclude(sportEvent => sportEvent.AvailableBets)
+                .ThenInclude(availableSportEventBets => availableSportEventBets.SportEvent);
+    }
+}

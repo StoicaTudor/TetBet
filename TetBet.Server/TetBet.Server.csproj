@@ -6,14 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
+      <PackageReference Include="Unity.Container" Version="5.11.11" />
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="TetBet.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\TetBet.Infrastructure\obj\Debug\net5.0\TetBet.Infrastructure.dll</HintPath>
-      </Reference>
+      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
