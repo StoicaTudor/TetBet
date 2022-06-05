@@ -2,12 +2,11 @@ using System.Collections.Generic;
 using Se.Url;
 using TetBet.Server.Infrastructure.Services.RapidApi.RequestService;
 
-namespace TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football
+namespace TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football.Fetchers
 {
     public class FixturesApiFetcher : BaseApiFetcher
     {
-        public FixturesApiFetcher(IRequestService requestService, Dictionary<string, object> urlParams) : base(
-            requestService, urlParams)
+        public FixturesApiFetcher(IRequestService requestService, Dictionary<string, object> urlParams) : base(urlParams)
         {
         }
 

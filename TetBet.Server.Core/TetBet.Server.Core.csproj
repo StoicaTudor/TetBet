@@ -7,12 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
+    </ItemGroup>
 </Project>

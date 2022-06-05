@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TetBet.Infrastructure.Persistence;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using Unity;

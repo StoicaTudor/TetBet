@@ -1,7 +1,7 @@
 using AutoMapper;
 using TetBet.Server.Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities;
 
-namespace TetBet.Server.Application.Mappers.RapidApi
+namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
 {
     public class OddsProfile : Profile
     {

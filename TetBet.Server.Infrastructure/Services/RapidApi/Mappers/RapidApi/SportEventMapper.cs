@@ -6,7 +6,7 @@ using TetBet.Server.Infrastructure.Services.RapidApi.Entities;
 using TetBet.Server.Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities;
 using League = TetBet.Server.Infrastructure.Services.RapidApi.Entities.ApiFixtureEntities.League;
 
-namespace TetBet.Server.Application.Mappers.RapidApi
+namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
 {
     public class SportEventMapper
     {

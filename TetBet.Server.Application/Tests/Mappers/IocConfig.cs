@@ -1,6 +1,6 @@
 using AutoMapper;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
-using TetBet.Server.Application.Mappers.RapidApi;
+using TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi;
 using Unity;
 using Unity.Injection;
 

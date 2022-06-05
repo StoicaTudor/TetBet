@@ -1,7 +1,7 @@
+using System;
 using System.Linq;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using TetBet.Server.Infrastructure.Services.RapidApi.KeySelector;
-using TetBet.Server.Infrastructure.Services.RapidApi.RequestService.Exceptions;
 
 namespace TetBet.Server.Infrastructure.Services.RapidApi.RequestService
 {
@@ -19,51 +19,61 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.RequestService
 
         public string GetRapidApiRootUrl()
         {
-            // TODO: implement this Get -> var client = new RestClient("https://api-football-v1.p.rapidapi.com/v3/odds/bets");
             string rapidApiRootUrl = _unitOfWork
                 .RapidApiConfigData
-                .Get()
+                .Get(rapidApiConfigData => rapidApiConfigData.Key == "RapidApiRootUrl")
                 .First()
                 .Value;
 
             if (rapidApiRootUrl == null)
-            {
-                throw new RapidApiRootUrlNotFoundException();
-            }
+                throw new Exception("RapidApiRootUrl not found");
 
             return rapidApiRootUrl;
         }
 
         public string GetRapidApiHost()
         {
-            // TODO: implement this Get -> request.AddHeader("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com");
             string rapidApiHost = _unitOfWork
                 .RapidApiConfigData
-                .Get()
+                .Get(rapidApiConfigData => rapidApiConfigData.Key == "RapidApiHost")
                 .First()
                 .Value;
 
             if (rapidApiHost == null)
-            {
-                throw new RapidApiHostNotFoundException();
-            }
+                throw new Exception("RapidApiHost not found");
 
             return rapidApiHost;
         }
 
         public string GetRapidApiKey()
-        {
-            return _keySelector.GetKeyWithMostAvailableCalls();
-        }
+            => _keySelector.GetKeyWithMostAvailableCalls();
 
         public string GetRapidApiHostHeaderName()
         {
-            throw new System.NotImplementedException();
+            string rapidApiHostHeaderName = _unitOfWork
+                .RapidApiConfigData
+                .Get(rapidApiConfigData => rapidApiConfigData.Key == "RapidApiHostHeaderName")
+                .First()
+                .Value;
+
+            if (rapidApiHostHeaderName == null)
+                throw new Exception("RapidApiHostHeaderName not found");
+
+            return rapidApiHostHeaderName;
         }
 
         public string GetRapidApiKeyHeaderName()
         {
-            throw new System.NotImplementedException();
+            string rapidApiKeyHeaderName = _unitOfWork
+                .RapidApiConfigData
+                .Get(rapidApiConfigData => rapidApiConfigData.Key == "RapidApiKeyHeaderName")
+                .First()
+                .Value;
+
+            if (rapidApiKeyHeaderName == null)
+                throw new Exception("RapidApiKeyHeaderName not found");
+
+            return rapidApiKeyHeaderName;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         public IRepository<RapidApiConfigData> RapidApiConfigData { get; }
         public IRepository<Competition> Competition { get; }
         public IRepository<SportEntity> SportEntity { get; }
+        public IRepository<Country> Country { get; }
 
         public EntitiesIncluder<User> UserIncludes { get; }
         void Commit();

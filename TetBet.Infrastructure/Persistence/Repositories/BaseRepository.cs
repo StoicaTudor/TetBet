@@ -4,7 +4,6 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using TetBet.Infrastructure.Entities;
 using EntityBase = TetBet.Infrastructure.Entities.EntityBase;
 
 namespace TetBet.Infrastructure.Persistence.Repositories
@@ -46,7 +45,14 @@ namespace TetBet.Infrastructure.Persistence.Repositories
 
         public void Insert(TEntity entity)
         {
-            _dbSet.Add(entity);
+            _context.Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void InsertBulk(IEnumerable<TEntity> entities)
+        {
+            entities.ToList().ForEach(Insert);
+            _context.SaveChanges();
         }
 
         public void Delete(object id)

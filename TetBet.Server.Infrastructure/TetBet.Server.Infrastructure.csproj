@@ -10,11 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="NUnit" Version="3.13.3" />
@@ -26,6 +22,10 @@
       <Reference Include="UrlBuilder, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>..\UrlBuilder-master\UrlBuilder\bin\Debug\UrlBuilder.dll</HintPath>
       </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TetBet.Infrastructure.Entities;
 
-namespace TetBet.Server.Application.Mappers.RapidApi
+namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
 {
     /*
      * I created this, because I do not know how to deal with profile mapper which use other IMappers (dk how to resolve

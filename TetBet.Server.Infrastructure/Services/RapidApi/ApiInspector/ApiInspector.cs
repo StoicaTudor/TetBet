@@ -74,23 +74,17 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
         public void CheckForResponseErrors(IRestResponse response)
         {
             if (!response.IsSuccessful)
-            {
                 throw new Exception("Response not successful exception");
-            }
 
             if (response.ErrorException != null)
-            {
                 throw response.ErrorException;
-            }
 
             JToken token = JObject
                 .Parse(response.Content)
                 .SelectToken("message");
 
             if (token != null)
-            {
                 token.ToString();
-            }
         }
     }
 }

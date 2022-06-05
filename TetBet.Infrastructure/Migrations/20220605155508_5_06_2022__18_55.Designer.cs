@@ -9,8 +9,8 @@ using TetBet.Infrastructure.Persistence;
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220524120105_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20220605155508_5_06_2022__18_55")]
+    partial class _5_06_2022__18_55
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,6 +18,21 @@ namespace TetBet.Infrastructure.Migrations
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.16");
+
+            modelBuilder.Entity("CompetitionSportEntity", b =>
+                {
+                    b.Property<long>("CompetitionsId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("SportEntitiesId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("CompetitionsId", "SportEntitiesId");
+
+                    b.HasIndex("SportEntitiesId");
+
+                    b.ToTable("CompetitionSportEntity");
+                });
 
             modelBuilder.Entity("TetBet.Infrastructure.Entities.AccountDetails", b =>
                 {
@@ -236,10 +251,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CompetitionId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("CountryId")
+                    b.Property<long>("CountryId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("HomeStadium")
@@ -252,8 +264,6 @@ namespace TetBet.Infrastructure.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompetitionId");
 
                     b.HasIndex("CountryId");
 
@@ -327,12 +337,22 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long>("RapidApiId")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("SportEntityId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("SportEntityId1")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("SportRelatedHumanType")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NationalityId");
+
+                    b.HasIndex("SportEntityId");
+
+                    b.HasIndex("SportEntityId1");
 
                     b.ToTable("SportRelatedHuman");
                 });
@@ -405,6 +425,21 @@ namespace TetBet.Infrastructure.Migrations
                     b.ToTable("UserBet");
                 });
 
+            modelBuilder.Entity("CompetitionSportEntity", b =>
+                {
+                    b.HasOne("TetBet.Infrastructure.Entities.Competition", null)
+                        .WithMany()
+                        .HasForeignKey("CompetitionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TetBet.Infrastructure.Entities.SportEntity", null)
+                        .WithMany()
+                        .HasForeignKey("SportEntitiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("TetBet.Infrastructure.Entities.Bet", b =>
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.GenericBet", null)
@@ -460,13 +495,11 @@ namespace TetBet.Infrastructure.Migrations
 
             modelBuilder.Entity("TetBet.Infrastructure.Entities.SportEntity", b =>
                 {
-                    b.HasOne("TetBet.Infrastructure.Entities.Competition", null)
-                        .WithMany("SportEntities")
-                        .HasForeignKey("CompetitionId");
-
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Country");
                 });
@@ -500,6 +533,14 @@ namespace TetBet.Infrastructure.Migrations
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Nationality")
                         .WithMany()
                         .HasForeignKey("NationalityId");
+
+                    b.HasOne("TetBet.Infrastructure.Entities.SportEntity", null)
+                        .WithMany("Staff")
+                        .HasForeignKey("SportEntityId");
+
+                    b.HasOne("TetBet.Infrastructure.Entities.SportEntity", null)
+                        .WithMany("Team")
+                        .HasForeignKey("SportEntityId1");
 
                     b.Navigation("Nationality");
                 });
@@ -547,14 +588,16 @@ namespace TetBet.Infrastructure.Migrations
                     b.Navigation("UserBets");
                 });
 
-            modelBuilder.Entity("TetBet.Infrastructure.Entities.Competition", b =>
-                {
-                    b.Navigation("SportEntities");
-                });
-
             modelBuilder.Entity("TetBet.Infrastructure.Entities.GenericBet", b =>
                 {
                     b.Navigation("Bets");
+                });
+
+            modelBuilder.Entity("TetBet.Infrastructure.Entities.SportEntity", b =>
+                {
+                    b.Navigation("Staff");
+
+                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("TetBet.Infrastructure.Entities.SportEvent", b =>

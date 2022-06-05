@@ -12,11 +12,14 @@ namespace TetBet.Infrastructure.Entities
     public class SportEntity : EntityBase
     {
         public string Name { get; set; }
-        public Infrastructure.Entities.Country Country { get; set; }
+        public long CountryId { get; set; }
+        public Country Country { get; set; }
         public string HomeStadium { get; set; }
 
-        public IEnumerable<SportRelatedHuman> Team;
-        public IEnumerable<SportRelatedHuman> Staff;
+        public IEnumerable<SportRelatedHuman> Team { get; set; }
+        public IEnumerable<SportRelatedHuman> Staff { get; set; }
+
+        public IEnumerable<Competition> Competitions { get; set; }
 
         public long RapidApiId { get; set; }
     }

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TetBet.Infrastructure.Persistence;
 
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220605144910_5_06_2022__17_49")]
+    partial class _5_06_2022__17_49
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -249,7 +251,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long>("CountryId")
+                    b.Property<long?>("CountryId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("HomeStadium")
@@ -494,10 +496,8 @@ namespace TetBet.Infrastructure.Migrations
             modelBuilder.Entity("TetBet.Infrastructure.Entities.SportEntity", b =>
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("SportEntities")
+                        .HasForeignKey("CountryId");
 
                     b.Navigation("Country");
                 });
@@ -584,6 +584,11 @@ namespace TetBet.Infrastructure.Migrations
             modelBuilder.Entity("TetBet.Infrastructure.Entities.BettingTicket", b =>
                 {
                     b.Navigation("UserBets");
+                });
+
+            modelBuilder.Entity("TetBet.Infrastructure.Entities.Country", b =>
+                {
+                    b.Navigation("SportEntities");
                 });
 
             modelBuilder.Entity("TetBet.Infrastructure.Entities.GenericBet", b =>

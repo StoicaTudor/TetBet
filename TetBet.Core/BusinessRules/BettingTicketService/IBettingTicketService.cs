@@ -1,3 +1,4 @@
+
 using TetBet.Infrastructure.Entities;
 
 namespace TetBet.Core.BusinessRules.BettingTicketService

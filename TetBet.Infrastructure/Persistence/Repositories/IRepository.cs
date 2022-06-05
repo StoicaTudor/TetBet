@@ -20,6 +20,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories
         bool IsInserted(TEntity entity);
 
         void Insert(TEntity entity);
+        void InsertBulk(IEnumerable<TEntity> entities);
         void Update(TEntity entity);
 
         public Microsoft.EntityFrameworkCore.DbSet<TEntity> DbSet { get; }

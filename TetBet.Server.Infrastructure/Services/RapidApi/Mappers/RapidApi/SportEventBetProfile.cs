@@ -3,7 +3,7 @@ using AutoMapper;
 using TetBet.Infrastructure.Entities;
 using Bet = TetBet.Server.Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities.Bet;
 
-namespace TetBet.Server.Application.Mappers.RapidApi
+namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
 {
     public class SportEventBetProfile : Profile
     {

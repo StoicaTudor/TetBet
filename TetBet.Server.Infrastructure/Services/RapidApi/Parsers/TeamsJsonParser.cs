@@ -47,7 +47,8 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Parsers
                     Id = int.Parse(teamToken.SelectToken("id").ToString()),
                     Name = teamToken.SelectToken("name").ToString(),
                     ManagerName = "",
-                    StadiumName = venueToken.SelectToken("name").ToString()
+                    StadiumName = venueToken.SelectToken("name").ToString(),
+                    Country = teamToken.SelectToken("country").ToString()
                 };
             }
             catch (NullReferenceException nullReferenceException)

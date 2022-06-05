@@ -10,7 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TetBet.Infrastructure\TetBet.Infrastructure.csproj" />
+      <ProjectReference Include="..\TetBet.Server.Application\TetBet.Server.Application.csproj" />
+      <ProjectReference Include="..\TetBet.Server.Infrastructure\TetBet.Server.Infrastructure.csproj" />
     </ItemGroup>
-
+    
 </Project>

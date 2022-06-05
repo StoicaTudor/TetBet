@@ -3,6 +3,7 @@ using TetBet.Infrastructure.Persistence;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers;
 using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football;
+using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football.Fetchers;
 using TetBet.Server.Infrastructure.Services.RapidApi.RequestService;
 using Unity;
 using Unity.Injection;

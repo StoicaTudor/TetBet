@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace TetBet.Infrastructure.Migrations
 {
-    public partial class SecondMigration : Migration
+    public partial class _5_6_2022__17_22 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -144,25 +144,25 @@ namespace TetBet.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SportRelatedHuman",
+                name: "SportEntity",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "text", nullable: true),
-                    NationalityId = table.Column<long>(type: "bigint", nullable: true),
-                    SportRelatedHumanType = table.Column<int>(type: "int", nullable: false),
+                    CountryId = table.Column<long>(type: "bigint", nullable: false),
+                    HomeStadium = table.Column<string>(type: "text", nullable: true),
                     RapidApiId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SportRelatedHuman", x => x.Id);
+                    table.PrimaryKey("PK_SportEntity", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SportRelatedHuman_Country_NationalityId",
-                        column: x => x.NationalityId,
+                        name: "FK_SportEntity_Country_CountryId",
+                        column: x => x.CountryId,
                         principalTable: "Country",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,32 +215,63 @@ namespace TetBet.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SportEntity",
+                name: "SportRelatedHuman",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "text", nullable: true),
-                    CountryId = table.Column<long>(type: "bigint", nullable: true),
-                    HomeStadium = table.Column<string>(type: "text", nullable: true),
+                    NationalityId = table.Column<long>(type: "bigint", nullable: true),
+                    SportRelatedHumanType = table.Column<int>(type: "int", nullable: false),
                     RapidApiId = table.Column<long>(type: "bigint", nullable: false),
-                    CompetitionId = table.Column<long>(type: "bigint", nullable: true)
+                    SportEntityId = table.Column<long>(type: "bigint", nullable: true),
+                    SportEntityId1 = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SportEntity", x => x.Id);
+                    table.PrimaryKey("PK_SportRelatedHuman", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SportEntity_Competition_CompetitionId",
-                        column: x => x.CompetitionId,
-                        principalTable: "Competition",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_SportEntity_Country_CountryId",
-                        column: x => x.CountryId,
+                        name: "FK_SportRelatedHuman_Country_NationalityId",
+                        column: x => x.NationalityId,
                         principalTable: "Country",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SportRelatedHuman_SportEntity_SportEntityId",
+                        column: x => x.SportEntityId,
+                        principalTable: "SportEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SportRelatedHuman_SportEntity_SportEntityId1",
+                        column: x => x.SportEntityId1,
+                        principalTable: "SportEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CompetitionSportEntity",
+                columns: table => new
+                {
+                    CompetitionsId = table.Column<long>(type: "bigint", nullable: false),
+                    SportEntitiesId = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CompetitionSportEntity", x => new { x.CompetitionsId, x.SportEntitiesId });
+                    table.ForeignKey(
+                        name: "FK_CompetitionSportEntity_Competition_CompetitionsId",
+                        column: x => x.CompetitionsId,
+                        principalTable: "Competition",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CompetitionSportEntity_SportEntity_SportEntitiesId",
+                        column: x => x.SportEntitiesId,
+                        principalTable: "SportEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -390,6 +421,11 @@ namespace TetBet.Infrastructure.Migrations
                 column: "SportId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CompetitionSportEntity_SportEntitiesId",
+                table: "CompetitionSportEntity",
+                column: "SportEntitiesId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_GenericBet_SportId",
                 table: "GenericBet",
                 column: "SportId");
@@ -405,14 +441,10 @@ namespace TetBet.Infrastructure.Migrations
                 column: "SportEventBetId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SportEntity_CompetitionId",
-                table: "SportEntity",
-                column: "CompetitionId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_SportEntity_CountryId",
                 table: "SportEntity",
-                column: "CountryId");
+                column: "CountryId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_SportEvent_CompetitionId",
@@ -433,6 +465,16 @@ namespace TetBet.Infrastructure.Migrations
                 name: "IX_SportRelatedHuman_NationalityId",
                 table: "SportRelatedHuman",
                 column: "NationalityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SportRelatedHuman_SportEntityId",
+                table: "SportRelatedHuman",
+                column: "SportEntityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SportRelatedHuman_SportEntityId1",
+                table: "SportRelatedHuman",
+                column: "SportEntityId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transaction_AccountDetailsId",
@@ -458,6 +500,9 @@ namespace TetBet.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "CompetitionSportEntity");
+
+            migrationBuilder.DropTable(
                 name: "Odd");
 
             migrationBuilder.DropTable(
@@ -465,9 +510,6 @@ namespace TetBet.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "RapidApiKey");
-
-            migrationBuilder.DropTable(
-                name: "SportEntity");
 
             migrationBuilder.DropTable(
                 name: "SportRelatedHuman");
@@ -480,6 +522,9 @@ namespace TetBet.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserBet");
+
+            migrationBuilder.DropTable(
+                name: "SportEntity");
 
             migrationBuilder.DropTable(
                 name: "BettingTicket");
