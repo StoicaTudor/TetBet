@@ -11,7 +11,7 @@ namespace TetBet.Infrastructure.Entities
         public string Location { get; set; }
         public DateTime Date { get; set; }
 
-        public IEnumerable<SportEventBet> AvailableBets { get; set; }
+        public ICollection<SportEventBet> AvailableBets { get; set; }
 
         public string SportEventDetails { get; set; }
         

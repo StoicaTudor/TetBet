@@ -6,6 +6,6 @@ namespace TetBet.Infrastructure.Entities
     {
         public Sport Sport { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Infrastructure.Entities.Bet> Bets { get; set; }
+        public ICollection<Infrastructure.Entities.Bet> Bets { get; set; }
     }
 }

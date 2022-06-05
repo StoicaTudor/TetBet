@@ -2,7 +2,7 @@
 
 namespace TetBet.Infrastructure.Migrations
 {
-    public partial class _5_06_2022__18_55 : Migration
+    public partial class _5_6_2022__23_43 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

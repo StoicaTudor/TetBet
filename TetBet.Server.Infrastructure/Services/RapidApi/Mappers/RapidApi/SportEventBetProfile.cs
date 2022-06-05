@@ -25,7 +25,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
             => new()
             {
                 Bet = CreateBet(bet),
-                Odds = _oddsMapper.Map<IEnumerable<Odd>>(bet.Odds)
+                Odds = _oddsMapper.Map<ICollection<Odd>>(bet.Odds)
             };
 
         private TetBet.Infrastructure.Entities.Bet CreateBet(Bet bet)

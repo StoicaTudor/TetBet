@@ -39,21 +39,13 @@ namespace TetBet.Infrastructure.Persistence.Repositories
         }
 
         public TEntity GetById(object id)
-        {
-            return _dbSet.FirstOrDefault(entity => entity.Id == (long) id);
-        }
+            => _dbSet.FirstOrDefault(entity => entity.Id == (long) id);
 
         public void Insert(TEntity entity)
-        {
-            _context.Add(entity);
-            _context.SaveChanges();
-        }
+            => _context.Add(entity);
 
         public void InsertBulk(IEnumerable<TEntity> entities)
-        {
-            entities.ToList().ForEach(Insert);
-            _context.SaveChanges();
-        }
+            => entities.ToList().ForEach(Insert);
 
         public void Delete(object id)
         {
@@ -64,9 +56,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories
         public void Delete(TEntity entityToDelete)
         {
             if (_context.Entry(entityToDelete).State == EntityState.Detached)
-            {
                 _dbSet.Attach(entityToDelete);
-            }
 
             _dbSet.Remove(entityToDelete);
         }
@@ -74,23 +64,17 @@ namespace TetBet.Infrastructure.Persistence.Repositories
         public void Update(TEntity entityToUpdate)
         {
             if (entityToUpdate == null)
-            {
                 throw new ArgumentException("entity");
-            }
 
             if (_context.Entry(entityToUpdate).State == EntityState.Detached)
-            {
                 HandleDetached(entityToUpdate);
-            }
 
             _dbSet.Attach(entityToUpdate);
             _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
         public bool IsInserted(TEntity entity)
-        {
-            return _dbSet.Find(entity.Id) != null;
-        }
+            => _dbSet.Find(entity.Id) != null;
 
         private bool HandleDetached(TEntity entity)
         {

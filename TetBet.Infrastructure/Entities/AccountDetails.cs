@@ -8,7 +8,7 @@ namespace TetBet.Infrastructure.Entities
         public DateTime DateRegistered { get; set; }
         public float AccountBalance { get; set; }
 
-        public IEnumerable<Transaction> Transactions { get; set; }
-        public IEnumerable<BettingTicket> BettingTickets { get; set; }
+        public ICollection<Transaction> Transactions { get; set; }
+        public ICollection<BettingTicket> BettingTickets { get; set; }
     }
 }

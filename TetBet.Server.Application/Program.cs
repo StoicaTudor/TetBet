@@ -2,7 +2,8 @@
 
 namespace TetBet.Server.Application
 {
-    public class Class1
+    public class Program
     {
+        
     }
 }

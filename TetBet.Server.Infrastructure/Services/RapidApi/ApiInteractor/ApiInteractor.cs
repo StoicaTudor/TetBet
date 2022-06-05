@@ -34,16 +34,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor
             string content = teamsApiFetcher.Fetch().Content;
             IEnumerable<Team> teams = teamsJsonParser.Parse(content);
 
-            var mappedTeams = _mapper.Map<IEnumerable<SportEntity>>(teams);
-            
-            var sportEntities = mappedTeams.ToList();
-            sportEntities.ToList().ForEach(entity =>
-            {
-                entity.CountryId = entity.Country.Id;
-                entity.Country = null;
-            });
-
-            return sportEntities;
+            return _mapper.Map<IEnumerable<SportEntity>>(teams);
         }
     }
 }

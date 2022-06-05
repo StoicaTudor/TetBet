@@ -16,10 +16,10 @@ namespace TetBet.Infrastructure.Entities
         public Country Country { get; set; }
         public string HomeStadium { get; set; }
 
-        public IEnumerable<SportRelatedHuman> Team { get; set; }
-        public IEnumerable<SportRelatedHuman> Staff { get; set; }
+        public ICollection<SportRelatedHuman> Team { get; set; }
+        public ICollection<SportRelatedHuman> Staff { get; set; }
 
-        public IEnumerable<Competition> Competitions { get; set; }
+        public ICollection<Competition> Competitions { get; set; }
 
         public long RapidApiId { get; set; }
     }

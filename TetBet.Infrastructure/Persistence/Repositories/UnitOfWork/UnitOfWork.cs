@@ -17,6 +17,8 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         private IRepository<SportEntity> _sportEntity;
         private IRepository<AccountDetails> _accountDetails;
         private IRepository<Country> _country;
+        private IRepository<Sport> _sport;
+        
         private EntitiesIncluder<User> _userIncluder;
 
         public UnitOfWork(ApplicationContext dbContext)
@@ -46,14 +48,17 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         public IRepository<SportEntity> SportEntity =>
             _sportEntity ??= new BaseRepository<SportEntity>(_dbContext);
 
-        public EntitiesIncluder<User> UserIncludes =>
-            _userIncluder ??= new UserIncludes();
-
         public IRepository<AccountDetails> AccountDetails =>
             _accountDetails ??= new BaseRepository<AccountDetails>(_dbContext);
 
         public IRepository<Country> Country =>
             _country ??= new BaseRepository<Country>(_dbContext);
+
+        public IRepository<Sport> Sport =>
+            _sport ??= new BaseRepository<Sport>(_dbContext);
+        
+        public EntitiesIncluder<User> UserIncludes =>
+            _userIncluder ??= new UserIncludes();
 
         public void Commit()
             => _dbContext.SaveChanges();

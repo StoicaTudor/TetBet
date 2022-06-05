@@ -102,7 +102,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CountryId")
+                    b.Property<long>("CountryId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
@@ -111,10 +111,10 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long>("RapidApiId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Season")
-                        .HasColumnType("text");
+                    b.Property<int>("Season")
+                        .HasColumnType("int");
 
-                    b.Property<long?>("SportId")
+                    b.Property<long>("SportId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -458,11 +458,15 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TetBet.Infrastructure.Entities.Sport", "Sport")
                         .WithMany()
-                        .HasForeignKey("SportId");
+                        .HasForeignKey("SportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Country");
 

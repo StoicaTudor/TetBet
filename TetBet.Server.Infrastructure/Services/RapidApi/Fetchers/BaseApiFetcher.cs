@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using RestSharp;
 using Se.Url;
 using TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector;
-using TetBet.Server.Infrastructure.Services.RapidApi.KeySelector;
 using TetBet.Server.Infrastructure.Services.RapidApi.RequestService;
 using Unity;
 

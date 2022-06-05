@@ -5,7 +5,7 @@ namespace TetBet.Infrastructure.Entities
 {
     public class BettingTicket : EntityBase
     {
-        public IEnumerable<UserBet> UserBets { get; set; }
+        public ICollection<UserBet> UserBets { get; set; }
 
         public float Sum { get; set; }
         public DateTime Date { get; set; }

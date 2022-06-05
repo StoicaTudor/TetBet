@@ -9,8 +9,8 @@ using TetBet.Infrastructure.Persistence;
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220605142254_5_6_2022__17_22")]
-    partial class _5_6_2022__17_22
+    [Migration("20220605204355_5_6_2022__23_43")]
+    partial class _5_6_2022__23_43
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -104,7 +104,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CountryId")
+                    b.Property<long>("CountryId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
@@ -113,10 +113,10 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long>("RapidApiId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Season")
-                        .HasColumnType("text");
+                    b.Property<int>("Season")
+                        .HasColumnType("int");
 
-                    b.Property<long?>("SportId")
+                    b.Property<long>("SportId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -265,8 +265,7 @@ namespace TetBet.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CountryId")
-                        .IsUnique();
+                    b.HasIndex("CountryId");
 
                     b.ToTable("SportEntity");
                 });
@@ -461,11 +460,15 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TetBet.Infrastructure.Entities.Sport", "Sport")
                         .WithMany()
-                        .HasForeignKey("SportId");
+                        .HasForeignKey("SportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Country");
 
@@ -497,8 +500,8 @@ namespace TetBet.Infrastructure.Migrations
             modelBuilder.Entity("TetBet.Infrastructure.Entities.SportEntity", b =>
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Country")
-                        .WithOne()
-                        .HasForeignKey("TetBet.Infrastructure.Entities.SportEntity", "CountryId")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

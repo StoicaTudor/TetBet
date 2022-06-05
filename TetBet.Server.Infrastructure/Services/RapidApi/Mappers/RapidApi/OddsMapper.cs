@@ -10,8 +10,9 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
      */
     public class OddsMapper
     {
-        public IEnumerable<Odd> Map(IEnumerable<Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities.Odd> odds)
-            => odds.Select(MapOdd);
+        public ICollection<Odd> Map(IEnumerable<Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities.Odd> odds)
+            => null;
+        // => odds.Select(MapOdd())
 
         public Odd MapOdd(Infrastructure.Services.RapidApi.Entities.FixtureOddsEntities.Odd odd)
             => new()

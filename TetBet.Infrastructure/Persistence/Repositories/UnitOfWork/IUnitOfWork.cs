@@ -15,6 +15,7 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         public IRepository<Competition> Competition { get; }
         public IRepository<SportEntity> SportEntity { get; }
         public IRepository<Country> Country { get; }
+        public IRepository<Sport> Sport { get; }
 
         public EntitiesIncluder<User> UserIncludes { get; }
         void Commit();

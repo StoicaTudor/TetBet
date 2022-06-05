@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace TetBet.Infrastructure.Migrations
 {
-    public partial class _5_6_2022__17_22 : Migration
+    public partial class _5_6_2022__23_19 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -171,10 +171,10 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Season = table.Column<string>(type: "text", nullable: true),
+                    Season = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: true),
-                    SportId = table.Column<long>(type: "bigint", nullable: true),
-                    CountryId = table.Column<long>(type: "bigint", nullable: true),
+                    SportId = table.Column<long>(type: "bigint", nullable: false),
+                    CountryId = table.Column<long>(type: "bigint", nullable: false),
                     RapidApiId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
@@ -185,13 +185,13 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.CountryId,
                         principalTable: "Country",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Competition_Sport_SportId",
                         column: x => x.SportId,
                         principalTable: "Sport",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -443,8 +443,7 @@ namespace TetBet.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_SportEntity_CountryId",
                 table: "SportEntity",
-                column: "CountryId",
-                unique: true);
+                column: "CountryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SportEvent_CompetitionId",

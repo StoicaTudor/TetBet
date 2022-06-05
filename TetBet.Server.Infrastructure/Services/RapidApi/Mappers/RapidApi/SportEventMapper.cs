@@ -64,7 +64,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
 
                 RapidApiId = apiLeague.Id,
 
-                Season = apiLeague.Season.ToString(),
+                Season = apiLeague.Season,
 
                 Id = _unitOfWork
                     .Competition

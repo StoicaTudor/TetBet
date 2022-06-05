@@ -30,11 +30,6 @@ namespace TetBet.Infrastructure.Persistence
                     "server = localhost; port = 3306; user = Citadin2; password = Aaladin2000-; database = TetBet");
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-
-        }
-
         public DbSet<AccountDetails> AccountDetails { get; set; }
         public DbSet<Bet> Bet { get; set; }
         public DbSet<BettingTicket> BettingTicket { get; set; }

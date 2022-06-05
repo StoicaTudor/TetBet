@@ -9,8 +9,8 @@ using TetBet.Infrastructure.Persistence;
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220605155508_5_06_2022__18_55")]
-    partial class _5_06_2022__18_55
+    [Migration("20220605202000_5_6_2022__23_19")]
+    partial class _5_6_2022__23_19
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -104,7 +104,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CountryId")
+                    b.Property<long>("CountryId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
@@ -113,10 +113,10 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long>("RapidApiId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Season")
-                        .HasColumnType("text");
+                    b.Property<int>("Season")
+                        .HasColumnType("int");
 
-                    b.Property<long?>("SportId")
+                    b.Property<long>("SportId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -460,11 +460,15 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TetBet.Infrastructure.Entities.Sport", "Sport")
                         .WithMany()
-                        .HasForeignKey("SportId");
+                        .HasForeignKey("SportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Country");
 
