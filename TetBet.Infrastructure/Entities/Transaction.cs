@@ -7,6 +7,7 @@ namespace TetBet.Infrastructure.Entities
         public float Sum { get; set; }
         public DateTime Date { get; set; }
 
+        public long AccountDetailsId { get; set; }
         public AccountDetails AccountDetails { get; set; }
     }
 }

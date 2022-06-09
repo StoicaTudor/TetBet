@@ -7,6 +7,7 @@ namespace TetBet.Infrastructure.Entities
         public string Email { get; set; }
         public string Password { get; set; }
 
+        public long AccountDetailsId { get; set; }
         public AccountDetails AccountDetails { get; set; }
     }
 }

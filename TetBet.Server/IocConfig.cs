@@ -6,6 +6,8 @@ using TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor;
 using TetBet.Server.Infrastructure.Services.RapidApi.KeySelector;
 using TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi;
 using TetBet.Server.Infrastructure.Services.RapidApi.RequestService;
+using TetBet.Server.Services.BetWinnerProcessor;
+using TetBet.Server.Services.FetchNewSportEvents;
 using Unity;
 using Unity.Injection;
 
@@ -23,12 +25,14 @@ namespace TetBet.Server
             Container.RegisterSingleton<IUnitOfWork, UnitOfWork>();
             Container.RegisterType<IApiInteractor, ApiInteractor>();
             Container.RegisterType<IRequestService, RequestService>();
+            Container.RegisterType<IBetWinnerProcessor, BetWinnerProcessor>();
+            Container.RegisterType<ISportEventsApiProcessor, SportEventsApiProcessor>();
 
             Container.RegisterType<IMapper, Mapper>(
                 new InjectionConstructor(new MapperConfiguration(cfg =>
                 {
-                    cfg.AddProfile(
-                        new TeamsProfile(Container.Resolve<IUnitOfWork>()));
+                    cfg.AddProfile(new TeamsProfile(Container.Resolve<IUnitOfWork>()));
+                    cfg.AddProfile(new SportEventProfile(Container.Resolve<IUnitOfWork>()));
                 }))
             );
         }

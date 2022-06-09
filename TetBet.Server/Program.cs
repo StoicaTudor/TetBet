@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using TetBet.Infrastructure.Entities;
-using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using TetBet.Server.Commands;
-using TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor;
+using TetBet.Server.Services.FetchNewSportEvents;
 using Unity;
 
 namespace TetBet.Server
@@ -20,6 +17,9 @@ namespace TetBet.Server
 
             while (true)
             {
+                container.Resolve<ISportEventsApiProcessor>().Process("Football");
+                Environment.Exit(0);
+                
                 var inputCommand = Console.ReadLine();
 
                 if (inputCommand == null)
@@ -50,7 +50,7 @@ namespace TetBet.Server
 
                 if (command == null || !command.CanExecute())
                 {
-                    Console.WriteLine("Command is null or can't be executed");
+                    Console.WriteLine("Comm and is null or can't be executed");
                     continue;
                 }
 

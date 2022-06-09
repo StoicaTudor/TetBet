@@ -35,7 +35,14 @@ namespace TetBet.Infrastructure.Persistence.Repositories
             if (orderBy != null)
                 return orderBy(query).ToList();
 
-            return query.ToList();
+            try
+            {
+                return query.ToList();
+            }
+            catch (Exception)
+            {
+                return new List<TEntity>();
+            }
         }
 
         public TEntity GetById(object id)
@@ -63,13 +70,15 @@ namespace TetBet.Infrastructure.Persistence.Repositories
 
         public void Update(TEntity entityToUpdate)
         {
-            if (entityToUpdate == null)
-                throw new ArgumentException("entity");
+            // if (entityToUpdate == null)
+            //     throw new ArgumentException("entityToUpdate is null");
+            //
+            // if (_context.Entry(entityToUpdate).State == EntityState.Detached)
+            //     HandleDetached(entityToUpdate);
+            //
+            // _dbSet.Attach(entityToUpdate);
+            // _context.Entry(entityToUpdate).State = EntityState.Modified;
 
-            if (_context.Entry(entityToUpdate).State == EntityState.Detached)
-                HandleDetached(entityToUpdate);
-
-            _dbSet.Attach(entityToUpdate);
             _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
@@ -85,10 +94,9 @@ namespace TetBet.Infrastructure.Persistence.Repositories
             object foundSet;
 
             bool exists = objectContext.TryGetObjectByKey(entityKey, out foundSet);
+            
             if (exists)
-            {
                 objectContext.Detach(foundSet);
-            }
 
             return exists;
         }

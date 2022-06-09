@@ -9,8 +9,8 @@ using TetBet.Infrastructure.Persistence;
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220605202000_5_6_2022__23_19")]
-    partial class _5_6_2022__23_19
+    [Migration("20220608134106_8_6_2022__16_40")]
+    partial class _8_6_2022__16_40
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -79,7 +79,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("AccountDetailsId")
+                    b.Property<long>("AccountDetailsId")
                         .HasColumnType("bigint");
 
                     b.Property<int>("BettingTicketStatus")
@@ -103,6 +103,9 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    b.Property<int>("CompetitionStatus")
+                        .HasColumnType("int");
 
                     b.Property<long>("CountryId")
                         .HasColumnType("bigint");
@@ -167,7 +170,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("BetId")
+                    b.Property<long>("BetId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
@@ -276,7 +279,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CompetitionId")
+                    b.Property<long>("CompetitionId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("Date")
@@ -291,7 +294,7 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<string>("SportEventDetails")
                         .HasColumnType("text");
 
-                    b.Property<int>("SportEventStatus")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -310,7 +313,7 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long?>("BetId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("SportEventId")
+                    b.Property<long>("SportEventId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -331,7 +334,7 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long?>("NationalityId")
+                    b.Property<long>("NationalityId")
                         .HasColumnType("bigint");
 
                     b.Property<long>("RapidApiId")
@@ -363,7 +366,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("AccountDetailsId")
+                    b.Property<long>("AccountDetailsId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("Date")
@@ -385,7 +388,7 @@ namespace TetBet.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("AccountDetailsId")
+                    b.Property<long>("AccountDetailsId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Email")
@@ -410,7 +413,7 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<long?>("BettingTicketId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("SportEventBetId")
+                    b.Property<long>("SportEventBetId")
                         .HasColumnType("bigint");
 
                     b.Property<int>("UserBetStatus")
@@ -451,7 +454,9 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.AccountDetails", "AccountDetails")
                         .WithMany("BettingTickets")
-                        .HasForeignKey("AccountDetailsId");
+                        .HasForeignKey("AccountDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AccountDetails");
                 });
@@ -488,7 +493,9 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Bet", "Bet")
                         .WithMany()
-                        .HasForeignKey("BetId");
+                        .HasForeignKey("BetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TetBet.Infrastructure.Entities.SportEventBet", null)
                         .WithMany("Odds")
@@ -512,7 +519,9 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Competition", "Competition")
                         .WithMany()
-                        .HasForeignKey("CompetitionId");
+                        .HasForeignKey("CompetitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Competition");
                 });
@@ -525,7 +534,9 @@ namespace TetBet.Infrastructure.Migrations
 
                     b.HasOne("TetBet.Infrastructure.Entities.SportEvent", "SportEvent")
                         .WithMany("AvailableBets")
-                        .HasForeignKey("SportEventId");
+                        .HasForeignKey("SportEventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Bet");
 
@@ -536,7 +547,9 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.Country", "Nationality")
                         .WithMany()
-                        .HasForeignKey("NationalityId");
+                        .HasForeignKey("NationalityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TetBet.Infrastructure.Entities.SportEntity", null)
                         .WithMany("Staff")
@@ -553,7 +566,9 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.AccountDetails", "AccountDetails")
                         .WithMany("Transactions")
-                        .HasForeignKey("AccountDetailsId");
+                        .HasForeignKey("AccountDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AccountDetails");
                 });
@@ -562,7 +577,9 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     b.HasOne("TetBet.Infrastructure.Entities.AccountDetails", "AccountDetails")
                         .WithMany()
-                        .HasForeignKey("AccountDetailsId");
+                        .HasForeignKey("AccountDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AccountDetails");
                 });
@@ -575,7 +592,9 @@ namespace TetBet.Infrastructure.Migrations
 
                     b.HasOne("TetBet.Infrastructure.Entities.SportEventBet", "SportEventBet")
                         .WithMany()
-                        .HasForeignKey("SportEventBetId");
+                        .HasForeignKey("SportEventBetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("SportEventBet");
                 });

@@ -11,7 +11,9 @@ namespace TetBet.Infrastructure.Entities
         public int? HomeTeamSecondHalfGoals { get; set; }
         public int? AwayTeamSecondHalfGoals { get; set; }
 
+        public long HomeTeamId { get; set; }
         public SportEntity HomeTeam { get; set; }
+        public long AwayTeamId { get; set; }
         public SportEntity AwayTeam { get; set; }
     }
 }

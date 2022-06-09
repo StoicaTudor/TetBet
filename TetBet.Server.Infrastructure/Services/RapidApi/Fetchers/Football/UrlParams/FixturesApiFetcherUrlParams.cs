@@ -1,6 +1,6 @@
 namespace TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football.UrlParams
 {
-    public class TeamsApiFetcherUrlParams : GenericUrlParams
+    public class FixturesApiFetcherUrlParams : GenericUrlParams
     {
         public long CompetitionId
         {

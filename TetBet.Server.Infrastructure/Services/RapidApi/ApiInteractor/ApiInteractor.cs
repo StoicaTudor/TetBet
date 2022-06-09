@@ -1,11 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
 using TetBet.Infrastructure.Entities;
-using TetBet.Server.Infrastructure.Services.RapidApi.Entities;
+using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers;
 using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football.Fetchers;
 using TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football.UrlParams;
 using TetBet.Server.Infrastructure.Services.RapidApi.Parsers;
+using Unity;
+using Unity.Resolution;
 
 namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor
 {
@@ -16,25 +17,51 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor
         // call ApiInspector
 
         private readonly IMapper _mapper;
+        private readonly IUnityContainer _unityContainer;
 
         public ApiInteractor(IMapper mapper)
         {
             _mapper = mapper;
+            _unityContainer = IocConfig.GetConfiguredContainer();
         }
 
-        public IEnumerable<SportEntity> GetTeams(int leagueId, int season)
+        public IEnumerable<SportEntity> GetTeams(long leagueId, int season)
         {
-            TeamsApiFetcherUrlParams teamsApiFetcherUrlParams = new TeamsApiFetcherUrlParams();
-            teamsApiFetcherUrlParams.LeagueId = leagueId;
-            teamsApiFetcherUrlParams.Season = season;
+            TeamsApiFetcherUrlParams teamsApiFetcherUrlParams = new TeamsApiFetcherUrlParams
+            {
+                CompetitionId = leagueId,
+                Season = season
+            };
 
-            TeamsApiFetcher teamsApiFetcher = new TeamsApiFetcher(teamsApiFetcherUrlParams.DictionaryUrlParams);
+            BaseApiFetcher teamsApiFetcher = _unityContainer.Resolve<TeamsApiFetcher>(
+                new ParameterOverride(typeof(Dictionary<string, object>),
+                    teamsApiFetcherUrlParams.DictionaryUrlParams));
 
-            TeamsJsonParser teamsJsonParser = new TeamsJsonParser();
             string content = teamsApiFetcher.Fetch().Content;
-            IEnumerable<Team> teams = teamsJsonParser.Parse(content);
+            TeamsJsonParser teamsJsonParser = new TeamsJsonParser();
 
-            return _mapper.Map<IEnumerable<SportEntity>>(teams);
+            return _mapper
+                .Map<IEnumerable<SportEntity>>(teamsJsonParser.Parse(content));
+        }
+
+        public IEnumerable<SportEvent> GetSportEvents(long leagueId, int season)
+        {
+            FixturesApiFetcherUrlParams fixturesApiFetcherUrlParams = new FixturesApiFetcherUrlParams
+            {
+                CompetitionId = leagueId,
+                Season = season
+            };
+
+            BaseApiFetcher fixturesApiFetcher = _unityContainer.Resolve<FixturesApiFetcher>(
+                new ParameterOverride(typeof(Dictionary<string, object>),
+                    fixturesApiFetcherUrlParams.DictionaryUrlParams));
+
+            string content = fixturesApiFetcher.Fetch().Content;
+
+            return _mapper
+                .Map<IEnumerable<SportEvent>>(_unityContainer
+                    .Resolve<FixturesJsonParser>()
+                    .Parse(content));
         }
     }
 }

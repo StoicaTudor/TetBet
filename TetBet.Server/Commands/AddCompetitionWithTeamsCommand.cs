@@ -33,6 +33,7 @@ namespace TetBet.Server.Commands
                 .ToList()
                 .ForEach(entity =>
                 {
+                    // TODO: this is not a good practice, but I do not know how to deal with it (EF insert nested objects)
                     entity.CountryId = entity.Country.Id;
                     entity.Country = null;
                 });

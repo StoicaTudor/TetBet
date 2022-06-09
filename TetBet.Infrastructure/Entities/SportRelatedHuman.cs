@@ -1,4 +1,3 @@
-
 namespace TetBet.Infrastructure.Entities
 {
     /*
@@ -7,9 +6,10 @@ namespace TetBet.Infrastructure.Entities
     public class SportRelatedHuman : EntityBase
     {
         public string Name { get; set; }
+        public long NationalityId { get; set; }
         public Country Nationality { get; set; }
         public SportRelatedHumanType SportRelatedHumanType { get; set; }
-        
+
         public long RapidApiId { get; set; }
     }
 }

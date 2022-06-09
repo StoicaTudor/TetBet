@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text.Json;
+using AutoMapper;
 using TetBet.Infrastructure.Entities;
 using TetBet.Infrastructure.Persistence.Repositories.UnitOfWork;
 using TetBet.Server.Infrastructure.Services.RapidApi.Entities;
@@ -8,26 +9,38 @@ using League = TetBet.Server.Infrastructure.Services.RapidApi.Entities.ApiFixtur
 
 namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
 {
-    public class SportEventMapper
+    public class SportEventProfile : Profile
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public SportEventMapper(IUnitOfWork unitOfWork)
+        public SportEventProfile(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+
+            CreateMap<ApiFixture, SportEvent>()
+                .ForMember(sportEvent => sportEvent.Date,
+                    option =>
+                        option.MapFrom(apiFixture => apiFixture.Fixture.Date))
+                .ForMember(sportEvent => sportEvent.Competition,
+                    option =>
+                        option.MapFrom(apiFixture => ApiLeagueToCompetition(apiFixture.League)))
+                .ForMember(sportEvent => sportEvent.Location,
+                    option =>
+                        option.Ignore())
+                .ForMember(sportEvent => sportEvent.Status,
+                    option =>
+                        option.MapFrom(apiFixture =>
+                            ApiFixtureStatusToSportEventStatus(apiFixture.Fixture.Status)))
+                .ForMember(sportEvent => sportEvent.SportEventDetails,
+                    option =>
+                        option.MapFrom(apiFixture =>
+                            JsonSerializer.Serialize(ApiFixtureToFootballEvent(apiFixture), null)))
+                .ForMember(sportEvent => sportEvent.RapidApiId,
+                    option =>
+                        option.MapFrom(apiFixture =>
+                            apiFixture.Fixture.Id));
         }
 
-        public SportEvent ApiFixtureToSportEvent(ApiFixture apiFixture)
-            => new()
-            {
-                Location = "",
-                Date = apiFixture.Fixture.Date,
-                RapidApiId = apiFixture.Fixture.Id,
-                Status = ApiFixtureStatusToSportEventStatus(apiFixture.Fixture.Status),
-                Competition = ApiLeagueToCompetition(apiFixture.League),
-                SportEventDetails = JsonSerializer.Serialize(ApiFixtureToFootballEvent(apiFixture))
-            };
-        
         private SportEventStatus ApiFixtureStatusToSportEventStatus(Status apiFixtureStatus)
         {
             switch (apiFixtureStatus.FullName)
@@ -42,7 +55,7 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Mappers.RapidApi
                 case "Second Half":
                     return SportEventStatus.InProgress;
 
-                default: return SportEventStatus.InProgress;
+                default: return SportEventStatus.NotStarted;
             }
         }
 

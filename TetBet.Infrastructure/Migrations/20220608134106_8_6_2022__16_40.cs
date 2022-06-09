@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace TetBet.Infrastructure.Migrations
 {
-    public partial class _5_6_2022__23_19 : Migration
+    public partial class _8_6_2022__16_40 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,7 +87,7 @@ namespace TetBet.Infrastructure.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Sum = table.Column<float>(type: "float", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime", nullable: false),
-                    AccountDetailsId = table.Column<long>(type: "bigint", nullable: true),
+                    AccountDetailsId = table.Column<long>(type: "bigint", nullable: false),
                     BettingTicketStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -98,7 +98,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.AccountDetailsId,
                         principalTable: "AccountDetails",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -109,7 +109,7 @@ namespace TetBet.Infrastructure.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Sum = table.Column<float>(type: "float", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime", nullable: false),
-                    AccountDetailsId = table.Column<long>(type: "bigint", nullable: true)
+                    AccountDetailsId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -119,7 +119,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.AccountDetailsId,
                         principalTable: "AccountDetails",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -130,7 +130,7 @@ namespace TetBet.Infrastructure.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Email = table.Column<string>(type: "text", nullable: true),
                     Password = table.Column<string>(type: "text", nullable: true),
-                    AccountDetailsId = table.Column<long>(type: "bigint", nullable: true)
+                    AccountDetailsId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -140,7 +140,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.AccountDetailsId,
                         principalTable: "AccountDetails",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -175,6 +175,7 @@ namespace TetBet.Infrastructure.Migrations
                     Name = table.Column<string>(type: "text", nullable: true),
                     SportId = table.Column<long>(type: "bigint", nullable: false),
                     CountryId = table.Column<long>(type: "bigint", nullable: false),
+                    CompetitionStatus = table.Column<int>(type: "int", nullable: false),
                     RapidApiId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
@@ -221,7 +222,7 @@ namespace TetBet.Infrastructure.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "text", nullable: true),
-                    NationalityId = table.Column<long>(type: "bigint", nullable: true),
+                    NationalityId = table.Column<long>(type: "bigint", nullable: false),
                     SportRelatedHumanType = table.Column<int>(type: "int", nullable: false),
                     RapidApiId = table.Column<long>(type: "bigint", nullable: false),
                     SportEntityId = table.Column<long>(type: "bigint", nullable: true),
@@ -235,7 +236,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.NationalityId,
                         principalTable: "Country",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SportRelatedHuman_SportEntity_SportEntityId",
                         column: x => x.SportEntityId,
@@ -280,8 +281,8 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    CompetitionId = table.Column<long>(type: "bigint", nullable: true),
-                    SportEventStatus = table.Column<int>(type: "int", nullable: false),
+                    CompetitionId = table.Column<long>(type: "bigint", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
                     Location = table.Column<string>(type: "text", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime", nullable: false),
                     SportEventDetails = table.Column<string>(type: "text", nullable: true),
@@ -295,7 +296,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.CompetitionId,
                         principalTable: "Competition",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -326,7 +327,7 @@ namespace TetBet.Infrastructure.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     BetId = table.Column<long>(type: "bigint", nullable: true),
-                    SportEventId = table.Column<long>(type: "bigint", nullable: true)
+                    SportEventId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -342,7 +343,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.SportEventId,
                         principalTable: "SportEvent",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -353,7 +354,7 @@ namespace TetBet.Infrastructure.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "text", nullable: true),
                     Value = table.Column<float>(type: "float", nullable: false),
-                    BetId = table.Column<long>(type: "bigint", nullable: true),
+                    BetId = table.Column<long>(type: "bigint", nullable: false),
                     SportEventBetId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
@@ -364,7 +365,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.BetId,
                         principalTable: "Bet",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Odd_SportEventBet_SportEventBetId",
                         column: x => x.SportEventBetId,
@@ -379,7 +380,7 @@ namespace TetBet.Infrastructure.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    SportEventBetId = table.Column<long>(type: "bigint", nullable: true),
+                    SportEventBetId = table.Column<long>(type: "bigint", nullable: false),
                     UserBetStatus = table.Column<int>(type: "int", nullable: false),
                     BettingTicketId = table.Column<long>(type: "bigint", nullable: true)
                 },
@@ -397,7 +398,7 @@ namespace TetBet.Infrastructure.Migrations
                         column: x => x.SportEventBetId,
                         principalTable: "SportEventBet",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
