@@ -19,6 +19,8 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         private IRepository<Country> _country;
         private IRepository<Sport> _sport;
         private IRepository<UserBet> _userBet;
+        private IRepository<GenericBet> _genericBet;
+        private IRepository<Bet> _bet;
 
         private EntitiesIncluder<User> _userIncluder;
         private EntitiesIncluder<Competition> _competitionIncluder;
@@ -61,6 +63,12 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
 
         public IRepository<UserBet> UserBet =>
             _userBet ??= new BaseRepository<UserBet>(_dbContext);
+
+        public IRepository<GenericBet> GenericBet =>
+            _genericBet ??= new BaseRepository<GenericBet>(_dbContext);
+
+        public IRepository<Bet> Bet =>
+            _bet ??= new BaseRepository<Bet>(_dbContext);
 
         public EntitiesIncluder<User> UserIncluder =>
             _userIncluder ??= new UserIncludes();

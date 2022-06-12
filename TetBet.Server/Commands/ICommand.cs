@@ -2,7 +2,7 @@ namespace TetBet.Server.Commands
 {
     public interface ICommand
     {
-        bool CanExecute();
+        bool CanExecute(string[] parameters);
         void Execute(string[] parameters);
     }
 }

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TetBet.Infrastructure.Persistence;
 
 namespace TetBet.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220609080847_9_6_2022__11_08")]
+    partial class _9_6_2022__11_08
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,12 +154,7 @@ namespace TetBet.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<long>("SportId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("SportId");
 
                     b.ToTable("GenericBet");
                 });
@@ -474,17 +471,6 @@ namespace TetBet.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Country");
-
-                    b.Navigation("Sport");
-                });
-
-            modelBuilder.Entity("TetBet.Infrastructure.Entities.GenericBet", b =>
-                {
-                    b.HasOne("TetBet.Infrastructure.Entities.Sport", "Sport")
-                        .WithMany()
-                        .HasForeignKey("SportId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Sport");
                 });

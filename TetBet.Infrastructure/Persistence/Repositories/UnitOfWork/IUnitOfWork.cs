@@ -17,6 +17,8 @@ namespace TetBet.Infrastructure.Persistence.Repositories.UnitOfWork
         public IRepository<Country> Country { get; }
         public IRepository<Sport> Sport { get; }
         public IRepository<UserBet> UserBet { get; }
+        public IRepository<GenericBet> GenericBet { get; }
+        public IRepository<Bet> Bet { get; }
 
         public EntitiesIncluder<User> UserIncluder { get; }
         public EntitiesIncluder<Competition> CompetitionIncluder { get; }

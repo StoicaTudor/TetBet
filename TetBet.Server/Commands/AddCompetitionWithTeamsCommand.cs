@@ -10,7 +10,7 @@ namespace TetBet.Server.Commands
 {
     public class AddCompetitionWithTeamsCommand : ICommand
     {
-        public bool CanExecute() // check is competition and teams are already in DB
+        public bool CanExecute(string[] parameters) // check is competition and teams are already in DB
             => true;
 
         public void Execute(string[] parameters)

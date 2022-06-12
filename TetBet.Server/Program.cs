@@ -17,9 +17,9 @@ namespace TetBet.Server
 
             while (true)
             {
-                container.Resolve<ISportEventsApiProcessor>().Process("Football");
-                Environment.Exit(0);
-                
+                // container.Resolve<ISportEventsApiProcessor>().Process("Football");
+                // Environment.Exit(0);
+
                 var inputCommand = Console.ReadLine();
 
                 if (inputCommand == null)
@@ -46,15 +46,20 @@ namespace TetBet.Server
                     case 1:
                         command = container.Resolve<AddCompetitionWithTeamsCommand>();
                         break;
+                    case 2:
+                        command = container.Resolve<AddSportBetsCommand>();
+                        break;
                 }
 
-                if (command == null || !command.CanExecute())
+                string[] commandParams = inputParam.Split(',');
+
+                if (command == null || !command.CanExecute(commandParams))
                 {
                     Console.WriteLine("Comm and is null or can't be executed");
                     continue;
                 }
 
-                command.Execute(inputParam.Split(','));
+                command.Execute(commandParams);
 
                 Console.WriteLine("Command executed successfully");
             }
@@ -66,6 +71,8 @@ namespace TetBet.Server
             Console.WriteLine(
                 "1. Add Competition With RapidApiCompetitionId and Teams in Competition. \n" +
                 "Params: SportName(string),RapidApiCompetitionId(int),RapidApiCompetitionName(string),Season(int)");
+            Console.WriteLine("2. Add Bets (this should only be done once, this is only for setup) \n" +
+                              "Params: SportName(string)");
         }
 
         private void TestGetUser()
