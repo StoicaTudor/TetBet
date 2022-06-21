@@ -56,14 +56,21 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInspector
 
         private int GetRemainingCalls(IRestResponse response)
         {
-            string remainingCalls = response
-                .Headers
-                .Where(header => header.Name == "X-RateLimit-requests-Remaining")
-                .First()
-                .Value
-                .ToString();
+            try
+            {
+                string remainingCalls = response
+                    .Headers
+                    .Where(header => header.Name == "X-RateLimit-requests-Remaining")
+                    .First()
+                    .Value
+                    .ToString();
 
-            return int.Parse(remainingCalls);
+                return int.Parse(remainingCalls);
+            }
+            catch (Exception)
+            {
+                return 100;
+            }
         }
 
         /*

@@ -63,5 +63,25 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor
                     .Resolve<FixturesJsonParser>()
                     .Parse(content));
         }
+
+        public IEnumerable<SportEventBet> GetOddsForSportEvent(SportEvent sportEvent)
+        {
+            OddsApiFetcherUrlParams oddsApiFetcherUrlParams = new OddsApiFetcherUrlParams
+            {
+                RapidApiFixtureId = sportEvent.RapidApiId
+            };
+
+            BaseApiFetcher fixturesApiFetcher = _unityContainer.Resolve<OddsApiFetcher>(
+                new ParameterOverride(typeof(Dictionary<string, object>),
+                    oddsApiFetcherUrlParams.DictionaryUrlParams));
+
+            string content = fixturesApiFetcher.Fetch().Content;
+
+            return _mapper
+                .Map<IEnumerable<SportEventBet>>(_unityContainer
+                    .Resolve<FixtureOddsJsonParser>()
+                    .Parse(content)
+                );
+        }
     }
 }

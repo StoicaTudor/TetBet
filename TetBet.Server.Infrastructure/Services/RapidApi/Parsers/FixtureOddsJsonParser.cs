@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using Newtonsoft.Json.Linq;
@@ -17,7 +18,14 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Parsers
             if (dataResponseToken == null)
                 throw new DataResponseNotExistsException("dataResponseToken is null");
 
-            return JsonSerializer.Deserialize<IEnumerable<FixtureOdds>>(dataResponseToken.ToString());
+            try
+            {
+                return JsonSerializer.Deserialize<IEnumerable<FixtureOdds>>(dataResponseToken.ToString());
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

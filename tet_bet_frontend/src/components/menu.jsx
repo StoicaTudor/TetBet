@@ -7,6 +7,8 @@ import ReactJsAlert from "reactjs-alert";
 
 class Menu extends Component {
   state = {
+    dataFetched: false,
+
     alertMultipleBetsOfSameFixtureState: false,
     currentFilteredCountry: {
       id: 0,
@@ -424,6 +426,13 @@ class Menu extends Component {
         ],
       },
     ],
+  };
+
+  componentDidMount = () => {
+    if (!this.state.dataFetched) {
+      this.setState({ dataFetched: true });
+      console.log(this.state.dataFetched);
+    }
   };
 
   selectFixture = (fixtureId) => {

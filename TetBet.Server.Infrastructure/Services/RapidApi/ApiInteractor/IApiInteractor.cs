@@ -7,5 +7,6 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.ApiInteractor
     {
         public IEnumerable<SportEntity> GetTeams(long leagueId, int season);
         public IEnumerable<SportEvent> GetSportEvents(long leagueId, int season);
+        public IEnumerable<SportEventBet> GetOddsForSportEvent(SportEvent sportEvent);
     }
 }

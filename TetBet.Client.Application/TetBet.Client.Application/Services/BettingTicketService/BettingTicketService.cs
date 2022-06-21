@@ -62,9 +62,9 @@ namespace TetBet.Client.Application.Services.BettingTicketService
                     .Insert(bettingTicket);
             }
 
-            bettingTicket.UserBets = bettingTicket
-                .UserBets
-                .Append(userBet);
+            // bettingTicket.UserBets = bettingTicket
+            //     .UserBets
+            //     .Append(userBet);
 
             _unitOfWork.BettingTicket.Update(bettingTicket);
 

@@ -13,7 +13,10 @@ class Transactions extends Component {
           </span>
         </h4>
         <br />
-        <Transactioner />
+        <Transactioner
+          depositMoney={this.props.depositMoney}
+          withdrawMoney={this.props.withdrawMoney}
+        />
         <TransactionHistory transactions={this.props.account.transactions} />
       </React.Fragment>
     );

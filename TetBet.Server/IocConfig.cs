@@ -10,6 +10,7 @@ using TetBet.Server.Services.BetsFetcher;
 using TetBet.Server.Services.BetsFetcher.Mappers;
 using TetBet.Server.Services.BetWinnerProcessor;
 using TetBet.Server.Services.FetchNewSportEvents;
+using TetBet.Server.Services.UpdateOdds;
 using Unity;
 using Unity.Injection;
 
@@ -29,6 +30,7 @@ namespace TetBet.Server
             Container.RegisterType<IRequestService, RequestService>();
             Container.RegisterType<IBetWinnerProcessor, BetWinnerProcessor>();
             Container.RegisterType<ISportEventsApiProcessor, SportEventsApiProcessor>();
+            Container.RegisterType<ISportEventsOddsApiProcessor, SportEventsOddsApiProcessor>();
             Container.RegisterType<IBetsFetcher, BetsFetcher>();
 
             Container.RegisterType<IMapper, Mapper>(

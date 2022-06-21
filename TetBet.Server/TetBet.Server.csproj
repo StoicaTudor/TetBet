@@ -14,9 +14,5 @@
       <ProjectReference Include="..\TetBet.Server.Application\TetBet.Server.Application.csproj" />
       <ProjectReference Include="..\TetBet.Server.Infrastructure\TetBet.Server.Infrastructure.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Services\UpdateOdds" />
-    </ItemGroup>
     
 </Project>

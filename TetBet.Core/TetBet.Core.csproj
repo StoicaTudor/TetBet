@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
       <PackageReference Include="Unity.Container" Version="5.11.11" />
     </ItemGroup>
 

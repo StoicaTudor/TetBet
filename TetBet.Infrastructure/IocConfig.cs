@@ -28,8 +28,6 @@ namespace TetBet.Infrastructure
         }
 
         public static IUnityContainer GetConfiguredContainer()
-        {
-            return Container;
-        }
+            => Container;
     }
 }

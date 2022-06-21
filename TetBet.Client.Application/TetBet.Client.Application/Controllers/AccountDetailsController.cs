@@ -2,15 +2,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TetBet.Client.Application.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("TetBet/[controller]")]
+    [Route("TetBet/[controller]")]
     [ApiController]
     public class AccountDetailsController : ControllerBase
     {
-        [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("{userId}", Name = "GetUserById")]
-        public ActionResult<string> GetUserById(int userId)
+        // [HttpGet("{value}", Name = "depositMoney")]
+        [HttpGet("depositMoney")]
+        public IActionResult DepositMoney()
         {
-            return Ok("aa");
+            return Ok("asdas");
         }
     }
 }

@@ -5,14 +5,6 @@ import TransactionerField from "./transactionerField";
 class Transactioner extends Component {
   state = {};
 
-  depositMoney = (value) => {
-    // API call
-  };
-
-  withdrawMoney = (value) => {
-    // API call
-  };
-
   render() {
     return (
       <React.Fragment>

@@ -11,6 +11,6 @@ namespace TetBet.Server.Infrastructure.Services.RapidApi.Fetchers.Football.Fetch
         }
 
         protected override UrlBuilder ConfigureUrl(UrlBuilder url)
-            => url;
+            => url.AddPathSegment("odds");
     }
 }

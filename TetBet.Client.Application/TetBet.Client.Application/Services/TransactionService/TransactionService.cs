@@ -8,18 +8,19 @@ namespace TetBet.Client.Application.Services.TransactionService
     public class TransactionService : ITransactionService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _transactionMapper;
+        private readonly IMapper _mapper;
 
-        public TransactionService(IUnitOfWork unitOfWork, IMapper transactionMapper)
+        public TransactionService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
-            _transactionMapper = transactionMapper;
+            _mapper = mapper;
         }
 
         public void CreateTransaction(TransactionCreationDto transactionCreationDto)
         {
-            var transaction = _transactionMapper.Map<Transaction>(transactionCreationDto);
+            var transaction = _mapper.Map<Transaction>(transactionCreationDto);
             _unitOfWork.Transaction.Insert(transaction);
+            _unitOfWork.Commit();
         }
     }
 }

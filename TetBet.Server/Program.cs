@@ -1,6 +1,7 @@
 ﻿using System;
 using TetBet.Server.Commands;
 using TetBet.Server.Services.FetchNewSportEvents;
+using TetBet.Server.Services.UpdateOdds;
 using Unity;
 
 namespace TetBet.Server
@@ -17,9 +18,6 @@ namespace TetBet.Server
 
             while (true)
             {
-                // container.Resolve<ISportEventsApiProcessor>().Process("Football");
-                // Environment.Exit(0);
-
                 var inputCommand = Console.ReadLine();
 
                 if (inputCommand == null)
@@ -49,6 +47,9 @@ namespace TetBet.Server
                     case 2:
                         command = container.Resolve<AddSportBetsCommand>();
                         break;
+                    case 3:
+                        command = container.Resolve<RoutineCommand>();
+                        break;
                 }
 
                 string[] commandParams = inputParam.Split(',');
@@ -73,19 +74,8 @@ namespace TetBet.Server
                 "Params: SportName(string),RapidApiCompetitionId(int),RapidApiCompetitionName(string),Season(int)");
             Console.WriteLine("2. Add Bets (this should only be done once, this is only for setup) \n" +
                               "Params: SportName(string)");
-        }
-
-        private void TestGetUser()
-        {
-            // IocConfig.RegisterComponents();
-            // IUnityContainer container = IocConfig.GetConfiguredContainer();
-            //
-            // IUnitOfWork unitOfWork = container.Resolve<IUnitOfWork>();
-            //
-            // var sus = unitOfWork
-            //     .User
-            //     .Get(user => user.Id == 1, unitOfWork.UserIncludes.IncludeEntities);
-            // Console.WriteLine("aaa");
+            Console.WriteLine("3. Run Routine \n" +
+                              "Params: SportName(string)");
         }
     }
 }
